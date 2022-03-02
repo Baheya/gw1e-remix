@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="clip-GW1E_Loving_Icon_">
+      <rect width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="GW1E_Loving_Icon_" data-name="GW1E_Loving Icon " clip-path="url(#clip-GW1E_Loving_Icon_)">
+    <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M189.39,14.8c-22.449-19.131-55.837-15.69-76.443,5.571l-8.07,8.316-8.07-8.316C76.242-.893,42.814-4.334,20.364,14.8-5.362,36.755-6.714,76.164,16.309,99.965l79.269,81.85a12.843,12.843,0,0,0,18.558,0L193.4,99.965c23.064-23.8,21.712-63.211-4.015-85.168Z" transform="translate(45.317 56.029)" fill="#b79289"/>
+  </g>
+</svg>
