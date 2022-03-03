@@ -1,4 +1,10 @@
+.logo-wrapper:focus,
+.logo-wrapper:focus-within {
+  outline: 1px solid var(--dusty-rose);
+}
+
 .logo {
   width: 60%;
   max-width: 250px;
+  outline: none;
 }

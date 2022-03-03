@@ -6,13 +6,27 @@ export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function Button({ children, to, icon, label, onClick, ...delegated }) {
+export function Button({
+  children,
+  to,
+  icon,
+  type,
+  label,
+  onClick,
+  ...delegated
+}) {
   return (
     <>
       {to ? (
         <Link
           to={to}
-          className={icon ? 'button icon-button' : 'button'}
+          className={
+            type === 'icon'
+              ? 'button icon-button'
+              : type === 'primary'
+              ? 'button primary-button'
+              : 'button'
+          }
           {...delegated}
         >
           {icon && (
@@ -26,7 +40,13 @@ export function Button({ children, to, icon, label, onClick, ...delegated }) {
       ) : (
         <button
           type="button"
-          className={icon ? 'button icon-button' : 'button'}
+          className={
+            type === 'icon'
+              ? 'button icon-button'
+              : type === 'primary'
+              ? 'button primary-button'
+              : 'button'
+          }
           onClick={onClick}
           {...delegated}
         >

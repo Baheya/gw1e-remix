@@ -26,23 +26,14 @@
   margin: 10px -20px 0 -20px;
   position: absolute;
   width: 100%;
-  top: 120px;
+  /* TO DO: make sure the below value situates the element correctly across mobile devices */
+  top: 15%;
   background-color: var(--strong-pink);
 }
 
-/* .main-navigation-links.has-children span {
-  display: inline-flex;
-  align-items: center;
-} */
-
-.main-navigation-links > li.dropdown:hover .sub-navigation-links,
 .main-navigation-links > li.dropdown:focus .sub-navigation-links,
 .main-navigation-links > li.dropdown:focus-within .sub-navigation-links,
 ul.visible {
-  /* max-height: initial; */
-  /* visibility: visible;
-  opacity: 1;
-  transform: rotateX(0) translateX(0); */
   display: block;
 }
 
@@ -54,6 +45,8 @@ ul.visible {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .main-navigation-links > li:not(:first-child),
@@ -66,15 +59,15 @@ ul.visible {
   text-align: center;
 }
 
+.main-navigation-links > li > a:focus,
+.main-navigation-links > li > a:focus-within {
+  outline: 1px dotted var(--dusty-rose);
+}
+
 .sub-navigation-links {
   list-style: none;
   padding: 0;
   display: none;
-  /* transform: rotateX(-90deg) translateX(0);
-  transform-origin: top center;
-  opacity: 0.3; */
-  /* visibility: hidden; */
-  /* max-height: 0; */
 }
 
 .sub-navigation-links > li:not(:first-child),
@@ -112,6 +105,10 @@ ul.visible {
   .main-navigation-links > li:not(:last-child) {
     border-top: none;
   }
+
+  .main-navigation-links > li a:hover {
+    color: var(--dusty-rose);
+  }
   .sub-navigation-links {
     position: absolute;
     top: 45px;
@@ -127,5 +124,9 @@ ul.visible {
 
   .sub-navigation-links > li:not(:first-child) {
     border-top: 1px solid var(--dusty-rose);
+  }
+
+  .main-navigation-links > li.dropdown:hover .sub-navigation-links ul.visible {
+    display: block;
   }
 }

@@ -10,6 +10,7 @@
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@graphcms/rich-text-react-renderer": "^0.4.2",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "graphql": "^16.2.0",

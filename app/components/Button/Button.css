@@ -42,9 +42,7 @@ button.button:hover {
 
 a.button:focus,
 button.button:focus {
-  outline-style: solid;
-  outline-color: transparent;
-  box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
+  outline: 1px solid var(--dusty-rose);
 }
 
 a.button:active,
@@ -59,6 +57,16 @@ button.button--small {
 a.button--block,
 button.button--block {
   width: 100%;
+}
+
+a.button.primary {
+  background-color: var(--strong-pink);
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-family: 'Agrandir';
+  font-weight: 200;
+  margin-top: 30px;
 }
 
 .icon-button {
