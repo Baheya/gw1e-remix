@@ -27,7 +27,7 @@ export function Footer() {
         </ul>
       </nav>
       <Button
-        type="icon"
+        variant="icon"
         label="Follow on Instagram"
         icon={<Instagram className="icon" />}
       />

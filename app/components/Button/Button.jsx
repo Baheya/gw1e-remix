@@ -10,7 +10,7 @@ export function Button({
   children,
   to,
   icon,
-  type,
+  variant,
   label,
   onClick,
   ...delegated
@@ -21,9 +21,9 @@ export function Button({
         <Link
           to={to}
           className={
-            type === 'icon'
+            variant === 'icon'
               ? 'button icon-button'
-              : type === 'primary'
+              : variant === 'primary'
               ? 'button primary-button'
               : 'button'
           }
@@ -39,11 +39,10 @@ export function Button({
         </Link>
       ) : (
         <button
-          type="button"
           className={
-            type === 'icon'
+            variant === 'icon'
               ? 'button icon-button'
-              : type === 'primary'
+              : variant === 'primary'
               ? 'button primary-button'
               : 'button'
           }

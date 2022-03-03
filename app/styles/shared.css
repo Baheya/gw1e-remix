@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto-Light.otf');
+  src: url('/fonts/Roboto-Light.ttf');
   font-weight: 300;
   font-style: normal;
 }
@@ -63,6 +63,7 @@
   --strong-pink: #ffdcd0;
   --dusty-rose: #b79289;
   --weak-white: #fffcf7;
+  --eggshell: #fffdf9;
 }
 
 html,
@@ -77,7 +78,7 @@ body {
   background-color: var(--weak-pink);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'header'
     'main'

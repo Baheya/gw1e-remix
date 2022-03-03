@@ -14,7 +14,7 @@ export function HamburgerButton({ isNavVisible, setIsNavVisible }) {
     <Button
       onClick={() => setIsNavVisible(!isNavVisible)}
       label="Toggle Navigation Menu"
-      type="icon"
+      variant="icon"
       icon={
         !isNavVisible ? (
           <img

@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -20,8 +19,12 @@ export const links = () => [
 ];
 
 export function meta() {
-  return { title: 'New Remix App' };
+  return { title: 'GW1E' };
 }
+
+//TO DO: re-organize headings semantic structure for homepage
+//TO DO: set CONSISTENT global media queries
+// TO DO: think about whether category icon should be dynamic
 
 export default function App() {
   return (
@@ -35,7 +38,6 @@ export default function App() {
       </head>
       <body>
         <Header />
-        <Link to="/posts">Posts</Link>
         <Outlet />
         <Footer />
         <ScrollRestoration />

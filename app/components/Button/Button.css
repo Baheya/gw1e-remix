@@ -59,7 +59,8 @@ button.button--block {
   width: 100%;
 }
 
-a.button.primary {
+a.button.primary-button,
+button.button.primary-button {
   background-color: var(--strong-pink);
   color: #000;
   border: 1px solid #000;
