@@ -1,0 +1,32 @@
+.book-club_section {
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.book-club_section h2 {
+  font-family: 'Paquito';
+  text-transform: uppercase;
+}
+
+.book-club_section h3 {
+  font-family: 'Agrandir';
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--dusty-rose);
+}
+
+.book-club_section img {
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  .book-club_section .books {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .book-club_section img {
+    max-width: 200px;
+  }
+}
