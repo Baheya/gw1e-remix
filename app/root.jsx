@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'remix';
+import { Footer, footerLinks } from './components/Footer';
 import { Header, headerLinks } from './components/Header';
 
 // import fonts from './styles/fonts.css';
@@ -14,6 +15,7 @@ import globalStyles from './styles/shared.css';
 
 export const links = () => [
   ...headerLinks(),
+  ...footerLinks(),
   { rel: 'stylesheet', href: globalStyles },
 ];
 
@@ -35,6 +37,7 @@ export default function App() {
         <Header />
         <Link to="/posts">Posts</Link>
         <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
