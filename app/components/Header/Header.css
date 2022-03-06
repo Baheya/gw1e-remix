@@ -1,4 +1,4 @@
-.header {
+header.header {
   padding: 30px 20px;
 }
 
@@ -6,7 +6,7 @@
   background-color: var(--strong-pink);
 }
 
-.header .nav {
+header.header .nav {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
@@ -32,7 +32,6 @@
 }
 
 .main-navigation-links > li.dropdown:focus .sub-navigation-links,
-.main-navigation-links > li.dropdown:focus-within .sub-navigation-links,
 ul.visible {
   display: block;
 }
@@ -82,7 +81,7 @@ ul.visible {
   color: var(--dusty-rose);
 }
 
-@media (min-width: 475px) {
+@media (min-width: 768px) {
   .nav .icon-button {
     display: none;
   }

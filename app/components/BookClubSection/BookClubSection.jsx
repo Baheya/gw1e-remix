@@ -1,3 +1,4 @@
+import { Link } from 'remix';
 import styles from './BookClubSection.css';
 
 export function links() {
@@ -13,12 +14,18 @@ export function BookClubSection({ books }) {
         's Picks
       </h3>
       <div className="books">
-        {books.map((book) => (
-          <img
-            src={book.featuredImage.image.url}
-            alt={`Book cover for ${book.featuredImage.name}`}
-          />
-        ))}
+        <ul>
+          {books.map((book) => (
+            <li>
+              <Link to="/">
+                <img
+                  src={book.featuredImage.image.url}
+                  alt={`Book cover for ${book.featuredImage.name}`}
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

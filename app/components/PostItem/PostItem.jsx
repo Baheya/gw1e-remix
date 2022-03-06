@@ -25,14 +25,20 @@ export function PostItem({
   featured,
 }) {
   return (
-    <article className={featured ? 'post-item featured' : 'post-item'}>
-      <img src={image} alt={imageAlt} />
-      <div className="wrapper">
-        <h2>{title}</h2>
-        {featured ? <PostMeta category={category} date={date} /> : null}
-        <p className="excerpt">{excerpt}</p>
-        {featured ? <Button to="/">Read More</Button> : null}
-      </div>
-    </article>
+    <li>
+      <article className={featured ? 'post-item featured' : 'post-item'}>
+        <img src={image} alt={imageAlt} />
+        <div className="content-wrapper">
+          <h2>{title}</h2>
+          {!featured ? <PostMeta category={category} date={date} /> : null}
+          <p className="excerpt">{excerpt}</p>
+          {featured ? (
+            <Button variant="primary" to="/">
+              Read More
+            </Button>
+          ) : null}
+        </div>
+      </article>
+    </li>
   );
 }

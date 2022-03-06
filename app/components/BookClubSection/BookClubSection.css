@@ -17,12 +17,17 @@
   color: var(--dusty-rose);
 }
 
+.book-club_section .books ul {
+  list-style: none;
+  padding: 0;
+}
+
 .book-club_section img {
   width: 100%;
 }
 
 @media (min-width: 700px) {
-  .book-club_section .books {
+  .book-club_section .books ul {
     display: flex;
     justify-content: space-evenly;
   }

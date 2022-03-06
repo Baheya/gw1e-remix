@@ -1,5 +1,5 @@
 import { Link } from 'remix';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { CategoryLink, categoryLinkLinks } from '../CategoryLink';
@@ -41,11 +41,13 @@ export function Header() {
     query: '(min-width: 768px)',
   });
 
+  useEffect(() => {
+    setIsSubNavVisible(false);
+  }, [isBiggerThanTablet]);
+
   return (
     <header
-      className={
-        !isNavVisible && !isBiggerThanTablet ? 'header' : 'header pink'
-      }
+      className={isNavVisible && !isBiggerThanTablet ? 'header pink' : 'header'}
     >
       <nav className="nav" aria-label="Main Navigation">
         <Logo />

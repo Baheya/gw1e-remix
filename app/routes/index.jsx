@@ -2,7 +2,6 @@ import { useLoaderData } from 'remix';
 import { GraphQLClient, gql } from 'graphql-request';
 
 import styles from '~/styles/home.css';
-import { PostItem, postItemLinks } from '~/components/PostItem';
 import {
   BookClubSection,
   bookClubSectionLinks,
@@ -11,12 +10,16 @@ import {
   NewsletterFormSection,
   newsletterFormSectionLinks,
 } from '~/components/NewsletterFormSection';
+import {
+  BlogPostsSection,
+  blogPostsSectionLinks,
+} from '~/components/BlogPostsSection';
 
 export function links() {
   return [
-    ...postItemLinks(),
     ...bookClubSectionLinks(),
     ...newsletterFormSectionLinks(),
+    ...blogPostsSectionLinks(),
     { rel: 'stylesheet', href: styles },
   ];
 }
@@ -30,7 +33,7 @@ export async function action({ request }) {
 
 const GetBlogPostsQuery = gql`
   {
-    blogPosts {
+    blogPosts(first: 4) {
       id
       title
       category {
@@ -82,21 +85,11 @@ export default function Posts() {
   let { blogPosts, bookReviewPosts } = useLoaderData();
 
   return (
-    <div>
-      <h1>Posts hiiii</h1>
-      {blogPosts.map((post) => (
-        <PostItem
-          title={post.title}
-          category={post.category}
-          date={post.updatedAt}
-          key={post.id}
-          excerpt={post.excerpt}
-          image={post.featuredImage.image.url}
-          featured
-        />
-      ))}
+    <main>
+      <h1 className="visually-hidden">Latest Blog Posts</h1>
+      <BlogPostsSection blogPosts={blogPosts} />
       <BookClubSection books={bookReviewPosts} />
       <NewsletterFormSection />
-    </div>
+    </main>
   );
 }
