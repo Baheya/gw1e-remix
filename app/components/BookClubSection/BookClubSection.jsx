@@ -1,8 +1,9 @@
-import { Link } from 'remix';
+import { BookReviewItem, bookReviewItemLinks } from '../BookReviewItem';
+
 import styles from './BookClubSection.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [...bookReviewItemLinks(), { rel: 'stylesheet', href: styles }];
 }
 
 export function BookClubSection({ books }) {
@@ -13,20 +14,11 @@ export function BookClubSection({ books }) {
         {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())}
         's Picks
       </h3>
-      <div className="books">
-        <ul>
-          {books.map((book) => (
-            <li>
-              <Link to="/">
-                <img
-                  src={book.featuredImage.image.url}
-                  alt={`Book cover for ${book.featuredImage.name}`}
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="books">
+        {books.map((book) => (
+          <BookReviewItem book={book} />
+        ))}
+      </ul>
     </section>
   );
 }
