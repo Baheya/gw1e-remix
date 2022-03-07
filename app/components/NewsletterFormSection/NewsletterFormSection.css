@@ -1,5 +1,8 @@
 .newsletter-form_section {
   text-align: center;
+  width: 90%;
+  margin: 40px auto;
+  max-width: 1000px;
 }
 
 .newsletter-form_section form {
@@ -12,6 +15,7 @@
   font-family: 'PP Woodland';
   font-weight: 300;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .newsletter-form_section h2 span:before,
@@ -47,21 +51,24 @@
 .newsletter-form_section input {
   background-color: var(--eggshell);
   border: 1px solid #000;
-  height: 40px;
+  height: 44px;
   width: 100%;
   padding: 6px 18px;
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
+  border-radius: 5px;
 }
 
 .newsletter-form_section .input-field {
   text-align: start;
+  margin-top: 15px;
+  margin-inline-end: 10px;
 }
 
 .newsletter-form_section .input-field:first-child,
 .newsletter-form_section button {
   flex-grow: 1;
-  flex-basis: 30%;
+  flex-basis: 25%;
 }
 
 .newsletter-form_section .input-field:last-of-type {
