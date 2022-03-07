@@ -1,7 +1,6 @@
 import { useLoaderData } from 'remix';
 import { GraphQLClient, gql } from 'graphql-request';
 
-import styles from '~/styles/home.css';
 import {
   BookClubSection,
   bookClubSectionLinks,
@@ -14,6 +13,9 @@ import {
   BlogPostsSection,
   blogPostsSectionLinks,
 } from '~/components/BlogPostsSection';
+
+import { graphcms } from '~/utils/graphql';
+import styles from '~/styles/home.css';
 
 export function links() {
   return [
@@ -71,9 +73,9 @@ const GetBookReviewPostsQuery = gql`
 `;
 
 export let loader = async () => {
-  const graphcms = new GraphQLClient(
-    'https://api-ap-south-1.graphcms.com/v2/ckypsi3rt0inu01xx6kuecie8/master'
-  );
+  // const graphcms = new GraphQLClient(
+  //   'https://api-ap-south-1.graphcms.com/v2/ckypsi3rt0inu01xx6kuecie8/master'
+  // );
 
   const { blogPosts } = await graphcms.request(GetBlogPostsQuery);
   const { bookReviewPosts } = await graphcms.request(GetBookReviewPostsQuery);
@@ -81,12 +83,12 @@ export let loader = async () => {
   return { blogPosts, bookReviewPosts };
 };
 
-export default function Posts() {
+export default function Index() {
   let { blogPosts, bookReviewPosts } = useLoaderData();
 
   return (
     <main>
-      <h1 className="visually-hidden">Latest Blog Posts</h1>
+      <h1 className="visually-hidden">Girl with One Earring</h1>
       <BlogPostsSection blogPosts={blogPosts} />
       <BookClubSection books={bookReviewPosts} />
       <NewsletterFormSection />

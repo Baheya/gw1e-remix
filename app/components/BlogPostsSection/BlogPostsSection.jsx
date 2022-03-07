@@ -15,21 +15,15 @@ export function links() {
 export function BlogPostsSection({ blogPosts }) {
   return (
     <section className="posts_section">
+      <h className="visually-hidden">Latest Blog Posts</h>
       <ul>
-        {blogPosts.map((post, index) => (
-          <Fragment key={post.id}>
-            <PostItem
-              title={post.title}
-              category={post.category}
-              date={post.updatedAt}
-              excerpt={post.excerpt}
-              image={post.featuredImage.image.url}
-              featured={index === 0}
-              key={post.id}
-            />
-            {index === 0 ? <Divider /> : null}
-          </Fragment>
-        ))}
+        {blogPosts &&
+          blogPosts.map((post, index) => (
+            <Fragment key={post.id}>
+              <PostItem post={post} featured={index === 0} key={post.id} />
+              {index === 0 ? <Divider /> : null}
+            </Fragment>
+          ))}
       </ul>
     </section>
   );

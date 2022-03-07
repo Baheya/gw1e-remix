@@ -1,0 +1,22 @@
+main.blog-feed {
+  max-width: 1000px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+main.blog-feed ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: masonry;
+  gap: 2em;
+}
+
+.grid-masonry > * {
+  align-self: start;
+}
+
+main.blog-feed ul li img {
+  aspect-ratio: initial;
+}

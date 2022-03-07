@@ -125,7 +125,8 @@ ul.visible {
     border-top: 1px solid var(--dusty-rose);
   }
 
-  .main-navigation-links > li.dropdown:hover .sub-navigation-links ul.visible {
+  .main-navigation-links > li.dropdown:hover .sub-navigation-links,
+  ul.visible {
     display: block;
   }
 }

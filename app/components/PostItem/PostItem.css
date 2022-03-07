@@ -10,7 +10,7 @@ article.post-item .content-wrapper {
   margin-top: 35px;
 }
 
-article.post-item h2 {
+article.post-item h3 {
   font-family: 'Paquito';
   font-weight: 400;
   font-style: normal;
@@ -49,7 +49,7 @@ article.post-item img {
     margin: auto 0;
   }
 
-  article.post-item:not(.featured) h2 {
+  article.post-item:not(.featured) h3 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;

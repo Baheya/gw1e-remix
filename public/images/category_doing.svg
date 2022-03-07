@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="clip-GW1E_Doing_Icon">
+      <rect width="300" height="300"/>
+    </clipPath>
+  </defs>
   <g id="GW1E_Doing_Icon" data-name="GW1E_Doing Icon" clip-path="url(#clip-GW1E_Doing_Icon)">
     <g id="Group_5890" data-name="Group 5890" transform="translate(262.895 305.757)">
       <path id="Path_1542" data-name="Path 1542" d="M86.176-135.859,57.132-164.908c2.457-2.858,4.894-5.895,7.543-8.734,7.332-7.858,14.593-15.793,22.177-23.4a314.243,314.243,0,0,1,31.987-27.427,637.611,637.611,0,0,1,55.117-37.506c4.747-2.9,9.478-1.275,11.515,3.985a5.13,5.13,0,0,1-.359,4.829c-15.022,24.194-31.167,47.6-49.621,69.317-6.75,7.944-13.828,15.664-21.309,22.917-8.839,8.569-18.276,16.522-27.459,24.737A2.918,2.918,0,0,1,86.176-135.859Z" transform="translate(-190.463 0)" fill="#b79289"/>
