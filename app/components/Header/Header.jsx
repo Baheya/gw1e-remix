@@ -28,7 +28,7 @@ const categories = [
 
 const pages = [
   { name: 'Home', path: '/', hasChildren: false },
-  { name: 'Blog', path: '/blog', hasChildren: true },
+  { name: 'Blog', path: '/posts', hasChildren: true },
   { name: 'About', path: '/about', hasChildren: false },
   { name: 'Contact', path: '/contact', hasChildren: false },
 ];
@@ -82,7 +82,7 @@ export function Header() {
                       </li>
                     ))}
                     <li>
-                      <Link to="/blog">All Stories</Link>
+                      <Link to="/posts">All Stories</Link>
                     </li>
                   </ul>
                 </li>

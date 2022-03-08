@@ -15,7 +15,7 @@ export function links() {
 export function BlogPostsSection({ blogPosts }) {
   return (
     <section className="posts_section">
-      <h className="visually-hidden">Latest Blog Posts</h>
+      <h2 className="visually-hidden">Latest Blog Posts</h2>
       <ul>
         {blogPosts &&
           blogPosts.map((post, index) => (

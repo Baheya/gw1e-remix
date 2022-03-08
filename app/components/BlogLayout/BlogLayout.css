@@ -4,7 +4,7 @@ main.blog-feed {
   margin: 40px auto;
 }
 
-main.blog-feed ul {
+main.blog-feed .grid-masonry {
   list-style: none;
   padding: 0;
   display: grid;
@@ -19,4 +19,18 @@ main.blog-feed ul {
 
 main.blog-feed ul li img {
   aspect-ratio: initial;
+}
+
+main.blog-feed nav {
+  margin-top: 60px;
+}
+
+main.blog-feed nav ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+main.blog-feed nav ul li {
+  margin-inline-end: 10px;
 }

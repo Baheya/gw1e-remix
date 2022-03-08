@@ -11,7 +11,7 @@ export function links() {
 export function Footer() {
   const pages = [
     { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Blog', path: '/posts' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];

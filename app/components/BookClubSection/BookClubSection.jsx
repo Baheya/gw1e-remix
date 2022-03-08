@@ -16,7 +16,7 @@ export function BookClubSection({ books }) {
       </h3>
       <ul className="books">
         {books.map((book) => (
-          <BookReviewItem book={book} />
+          <BookReviewItem key={book.id} book={book} />
         ))}
       </ul>
     </section>

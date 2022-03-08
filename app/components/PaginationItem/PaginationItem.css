@@ -1,0 +1,24 @@
+.pagination-item {
+  border: 1px solid var(--dusty-rose);
+  width: 4ch;
+  height: 35px;
+  background-color: transparent;
+  text-align: center;
+  color: var(--dusty-rose);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Paquito';
+  outline: none;
+}
+
+.pagination-item.active {
+  border: 1px solid #000;
+  color: #000;
+  background-color: var(--strong-pink);
+}
+
+.pagination-item:focus {
+  border: 3px dotted var(--dusty-rose);
+}
