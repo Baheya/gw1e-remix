@@ -1,6 +1,7 @@
 import { Link } from 'remix';
+
 import { Button, buttonLinks } from '../Button';
-import { Instagram } from '../Instagram';
+import { Instagram } from '../Icons/Instagram';
 
 import styles from './Footer.css';
 

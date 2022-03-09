@@ -105,8 +105,14 @@ ul.visible {
     border-top: none;
   }
 
+  .main-navigation-links li .link-active {
+    color: var(--dusty-rose);
+    text-decoration: underline;
+  }
+
   .main-navigation-links > li a:hover {
     color: var(--dusty-rose);
+    transition: 0.4s;
   }
   .sub-navigation-links {
     position: absolute;

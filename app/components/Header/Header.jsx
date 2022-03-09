@@ -1,4 +1,4 @@
-import { Link } from 'remix';
+import { NavLink, useLocation } from 'remix';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -37,13 +37,18 @@ export function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isSubNavVisible, setIsSubNavVisible] = useState(false);
 
+  let location = useLocation();
+
   const isBiggerThanTablet = useMediaQuery({
     query: '(min-width: 768px)',
   });
 
   useEffect(() => {
-    setIsSubNavVisible(false);
-  }, [isBiggerThanTablet]);
+    if (!isBiggerThanTablet) {
+      setIsNavVisible(false);
+      setIsSubNavVisible(false);
+    }
+  }, [location, isBiggerThanTablet]);
 
   return (
     <header
@@ -64,7 +69,7 @@ export function Header() {
                     isSubNavVisible={isSubNavVisible}
                     setIsSubNavVisible={setIsSubNavVisible}
                   >
-                    Blog
+                    {page.name}
                   </DropdownButton>
                   <ul
                     className={
@@ -76,19 +81,33 @@ export function Header() {
                   >
                     {categories.map((category, index) => (
                       <li>
-                        <CategoryLink to="/category/living" key={index}>
+                        <CategoryLink
+                          prefetch="intent"
+                          to="/category/living"
+                          key={index}
+                        >
                           {category.name}
                         </CategoryLink>
                       </li>
                     ))}
                     <li>
-                      <Link to="/posts">All Stories</Link>
+                      <NavLink prefetch="intent" to="/posts">
+                        All Stories
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
               ) : (
                 <li key={index}>
-                  <Link to={page.path}>{page.name}</Link>
+                  <NavLink
+                    prefetch="intent"
+                    to={page.path}
+                    className={({ isActive }) =>
+                      isActive ? 'link-active' : ''
+                    }
+                  >
+                    {page.name}
+                  </NavLink>
                 </li>
               )
             )}

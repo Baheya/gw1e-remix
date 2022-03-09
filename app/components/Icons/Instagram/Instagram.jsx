@@ -1,11 +1,3 @@
-import styles from './Instagram.css';
-
-export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
-}
-
-//TO DO: import other icons as svgs if necessary, remove corresponding css files
-
 export function Instagram(props) {
   return (
     <svg width={24} height={24} xmlns="http://www.w3.org/2000/svg" {...props}>

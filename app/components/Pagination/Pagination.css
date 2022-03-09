@@ -1,0 +1,17 @@
+.pagination li img {
+  aspect-ratio: initial;
+}
+
+.pagination ul {
+  margin-top: 60px;
+}
+
+.pagination ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.pagination li {
+  margin-inline-end: 10px;
+}

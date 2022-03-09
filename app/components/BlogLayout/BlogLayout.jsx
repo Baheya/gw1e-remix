@@ -1,11 +1,11 @@
-import { PaginationItem, paginationItemLinks } from '../PaginationItem';
+import { Pagination, paginationLinks } from '../Pagination';
 import { PostItem, postItemLinks } from '../PostItem';
 
 import styles from './BlogLayout.css';
 
 export function links() {
   return [
-    ...paginationItemLinks(),
+    ...paginationLinks(),
     ...postItemLinks(),
     { rel: 'stylesheet', href: styles },
   ];
@@ -22,19 +22,7 @@ export function BlogLayout({ posts, postsLimit, currentPage }) {
           <PostItem key={post.node.id} post={post.node} />
         ))}
       </ul>
-      <nav role="navigation" aria-label="Pagination">
-        <ul>
-          {Array.from({ length: pageCount }, (_, i) => i + 1).map(
-            (_, index) => (
-              <PaginationItem
-                currentPage={currentPage}
-                key={index}
-                index={index}
-              />
-            )
-          )}
-        </ul>
-      </nav>
+      <Pagination currentPage={currentPage} pageCount={pageCount} />
     </main>
   );
 }

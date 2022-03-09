@@ -1,4 +1,4 @@
-import { Link } from 'remix';
+import { NavLink } from 'remix';
 
 import styles from './CategoryLink.css';
 
@@ -6,13 +6,14 @@ export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function CategoryLink({ to, children = 'doing' }) {
+export function CategoryLink({ to, children = 'doing', ...delegated }) {
   return (
-    <Link
+    <NavLink
       to={to}
       className={`category-link ${children ? children?.toLowerCase() : ''}`}
+      {...delegated}
     >
       <span>{children}</span>
-    </Link>
+    </NavLink>
   );
 }

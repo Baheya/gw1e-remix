@@ -23,4 +23,10 @@
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  transition: 0.4s;
+}
+
+.main-navigation-links > li > button.button:hover {
+  color: var(--dusty-rose);
+  transition: 0.4s;
 }
