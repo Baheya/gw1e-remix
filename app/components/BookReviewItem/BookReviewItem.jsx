@@ -7,7 +7,7 @@ export function links() {
 
 export function BookReviewItem({ book }) {
   return (
-    <li className="book-review_item" key={book.id}>
+    <li className="book-review-item" key={book.id}>
       <Link to="/">
         <img
           src={book.featuredImage.image.url}

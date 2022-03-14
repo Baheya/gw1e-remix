@@ -16,14 +16,16 @@ export function links() {
 export function PostItem({ post, featured }) {
   return (
     <li>
-      <article className={featured ? 'post-item featured' : 'post-item'}>
+      <article
+        className={featured ? 'blog-post-item featured' : 'blog-post-item'}
+      >
         <img src={post.featuredImage.image.url} alt={post?.imageAlt} />
         <div className="content-wrapper">
           <h3>{post.title}</h3>
           {!featured ? (
             <PostMeta category={post.category} date={post.updatedAt} />
           ) : null}
-          <p className="excerpt">{post.excerpt}</p>
+          <p className="content-excerpt">{post.excerpt}</p>
           {featured ? (
             <Button variant="primary" to="/">
               Read More

@@ -6,14 +6,14 @@ header.header {
   background-color: var(--strong-pink);
 }
 
-header.header .nav {
+header.header .header-navigation {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
   align-items: center;
 }
 
-.nav .icon-button {
+.header-navigation .icon-button {
   justify-self: end;
 }
 
@@ -82,7 +82,7 @@ ul.visible {
 }
 
 @media (min-width: 768px) {
-  .nav .icon-button {
+  .header-navigation .icon-button {
     display: none;
   }
   .main-navigation-links {

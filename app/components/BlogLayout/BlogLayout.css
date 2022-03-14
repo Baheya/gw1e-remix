@@ -1,10 +1,10 @@
-main.blog-feed {
+main.blog-container {
   max-width: 1000px;
   width: 90%;
   margin: 40px auto;
 }
 
-main.blog-feed .grid-masonry {
+main.blog-container .blog-grid-masonry {
   list-style: none;
   padding: 0;
   display: grid;
@@ -13,24 +13,24 @@ main.blog-feed .grid-masonry {
   gap: 2em;
 }
 
-.grid-masonry > * {
+.blog-grid-masonry > * {
   align-self: start;
 }
 
-main.blog-feed ul li img {
+main.blog-container ul li img {
   aspect-ratio: initial;
 }
 
-main.blog-feed nav {
+main.blog-container nav {
   margin-top: 60px;
 }
 
-main.blog-feed nav ul {
+main.blog-container nav ul {
   padding: 0;
   display: flex;
   list-style: none;
 }
 
-main.blog-feed nav ul li {
+main.blog-container nav ul li {
   margin-inline-end: 10px;
 }

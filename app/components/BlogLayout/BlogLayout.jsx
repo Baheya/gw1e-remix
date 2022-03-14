@@ -15,9 +15,9 @@ export function BlogLayout({ posts, postsLimit, currentPage }) {
   let pageCount = Math.round(posts.aggregate.count / postsLimit);
 
   return (
-    <main className="blog-feed">
+    <main className="blog-container">
       <h1 className="visually-hidden">Latest Posts</h1>
-      <ul className="grid-masonry">
+      <ul className="blog-grid-masonry">
         {posts?.edges.map((post) => (
           <PostItem key={post.node.id} post={post.node} />
         ))}

@@ -1,32 +1,32 @@
-.newsletter-form_section {
+.newsletter-form-section {
   text-align: center;
   width: 90%;
   margin: 40px auto;
   max-width: 1000px;
 }
 
-.newsletter-form_section form {
+.newsletter-form-section form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.newsletter-form_section h2 {
+.newsletter-form-section h2 {
   font-family: 'PP Woodland';
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
-.newsletter-form_section h2 span:before,
-.newsletter-form_section h2 span:after {
+.newsletter-form-section h2 span:before,
+.newsletter-form-section h2 span:after {
   content: '◦';
   margin-inline-start: 10px;
   margin-inline-end: 10px;
 }
 
-.newsletter-form_section h2:before,
-.newsletter-form_section h2:after {
+.newsletter-form-section h2:before,
+.newsletter-form-section h2:after {
   content: '';
   background-image: url('/images/subscribe_line_for_mob.png');
   background-repeat: no-repeat;
@@ -37,18 +37,18 @@
   height: 15px;
 }
 
-.newsletter-form_section p {
+.newsletter-form-section p {
   font-family: 'Agrandir';
 }
 
-.newsletter-form_section label {
+.newsletter-form-section label {
   font-family: 'Agrandir';
   font-style: italic;
   text-transform: uppercase;
   margin-right: auto;
 }
 
-.newsletter-form_section input {
+.newsletter-form-section input {
   background-color: var(--eggshell);
   border: 1px solid #000;
   height: 44px;
@@ -59,33 +59,33 @@
   border-radius: 5px;
 }
 
-.newsletter-form_section .input-field {
+.newsletter-form-section .newsletter-form-input-field {
   text-align: start;
   margin-top: 15px;
   margin-inline-end: 10px;
 }
 
-.newsletter-form_section .input-field:first-child,
-.newsletter-form_section button {
+.newsletter-form-section .newsletter-form-input-field:first-child,
+.newsletter-form-section button {
   flex-grow: 1;
   flex-basis: 25%;
 }
 
-.newsletter-form_section .input-field:last-of-type {
+.newsletter-form-section .newsletter-form-input-field:last-of-type {
   text-align: start;
   flex-grow: 2;
   flex-basis: 40%;
 }
 
 @media (min-width: 750px) {
-  .newsletter-form_section form {
+  .newsletter-form-section form {
     display: flex;
     align-items: flex-end;
     flex-direction: row;
   }
 
-  .newsletter-form_section h2:before,
-  .newsletter-form_section h2:after {
+  .newsletter-form-section h2:before,
+  .newsletter-form-section h2:after {
     background-image: url('/images/subscribe_line.png');
     background-size: 100px;
     width: 100px;

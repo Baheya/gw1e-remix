@@ -1,0 +1,1 @@
+export { WavyLineMobile } from './WavyLineMobile';

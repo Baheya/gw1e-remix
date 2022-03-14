@@ -1,9 +1,9 @@
-.book-review_item img {
+.book-review-item img {
   width: 100%;
 }
 
 @media (min-width: 700px) {
-  .book-review_item img {
+  .book-review-item img {
     max-width: 200px;
   }
 }

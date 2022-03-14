@@ -1,1 +1,1 @@
-export { Loving, links as lovingLinks } from './Loving';
+export { Loving } from './Loving';

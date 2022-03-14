@@ -8,13 +8,13 @@ export function links() {
 
 export function BookClubSection({ books }) {
   return (
-    <section className="book-club_section">
+    <section className="book-club-section">
       <h2>The Book Club</h2>
       <h3>
         {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())}
         's Picks
       </h3>
-      <ul className="books">
+      <ul className="book-club-list">
         {books.map((book) => (
           <BookReviewItem key={book.id} book={book} />
         ))}

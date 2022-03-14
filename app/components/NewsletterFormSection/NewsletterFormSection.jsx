@@ -10,7 +10,7 @@ export function links() {
 export function NewsletterFormSection() {
   const actionData = useActionData();
   return (
-    <section className="newsletter-form_section">
+    <section className="newsletter-form-section">
       <h2>
         <span>Sign Up</span>
       </h2>
@@ -18,11 +18,11 @@ export function NewsletterFormSection() {
         Subscribe to the email list to get new posts directly to your inbox.
       </p>
       <Form method="post" action="/posts" reloadDocument>
-        <div className="input-field">
+        <div className="newsletter-form-input-field">
           <label htmlFor="name">First Name</label>
           <input name="name" type="text" />
         </div>
-        <div className="input-field">
+        <div className="newsletter-form-input-field">
           <label htmlFor="email">Email</label>
           <input name="email" type="text" />
         </div>

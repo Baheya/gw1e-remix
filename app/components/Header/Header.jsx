@@ -54,7 +54,7 @@ export function Header() {
     <header
       className={isNavVisible && !isBiggerThanTablet ? 'header pink' : 'header'}
     >
-      <nav className="nav" aria-label="Main Navigation">
+      <nav className="header-navigation" aria-label="Main Navigation">
         <Logo />
         <HamburgerButton
           setIsNavVisible={setIsNavVisible}
@@ -80,12 +80,8 @@ export function Header() {
                     id="blog-dropdown"
                   >
                     {categories.map((category, index) => (
-                      <li>
-                        <CategoryLink
-                          prefetch="intent"
-                          to="/category/living"
-                          key={index}
-                        >
+                      <li key={index}>
+                        <CategoryLink prefetch="intent" to="/category/living">
                           {category.name}
                         </CategoryLink>
                       </li>

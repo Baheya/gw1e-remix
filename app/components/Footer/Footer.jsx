@@ -18,7 +18,7 @@ export function Footer() {
   ];
   return (
     <footer className="footer">
-      <nav className="nav" aria-label="Footer Navigation">
+      <nav className="footer-navigation" aria-label="Footer Navigation">
         <ul className="footer-navigation-links">
           {pages.map((page, index) => (
             <li key={index}>

@@ -1,1 +1,1 @@
-export { Instagram, links as instagramLinks } from './Instagram';
+export { Instagram } from './Instagram';

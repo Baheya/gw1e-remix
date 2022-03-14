@@ -1,1 +1,1 @@
-export { Dying, links as dyingLinks } from './Dying';
+export { Dying } from './Dying';

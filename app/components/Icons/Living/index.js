@@ -1,1 +1,1 @@
-export { Living, links as livingLinks } from './Living';
+export { Living } from './Living';

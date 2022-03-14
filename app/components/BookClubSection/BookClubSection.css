@@ -1,16 +1,16 @@
-.book-club_section {
+.book-club-section {
   background-color: #fff;
   text-align: center;
   width: 100%;
   padding: 40px 0;
 }
 
-.book-club_section h2 {
+.book-club-section h2 {
   font-family: 'Paquito';
   text-transform: uppercase;
 }
 
-.book-club_section h3 {
+.book-club-section h3 {
   font-family: 'Agrandir';
   text-transform: uppercase;
   font-weight: normal;
@@ -18,24 +18,24 @@
   color: var(--dusty-rose);
 }
 
-.book-club_section ul.books {
+.book-club-section .book-club-list {
   list-style: none;
   padding: 0;
   width: 90%;
   margin: auto;
 }
 
-.book-club_section ul.books li {
+.book-club-section .book-club-list li {
   margin: 30px 0;
 }
 
 @media (min-width: 700px) {
-  .book-club_section ul.books {
+  .book-club-section .book-club-list {
     display: flex;
     justify-content: space-evenly;
   }
 
-  .book-club_section ul.books li {
+  .book-club-section .book-club-list li {
     margin: 30px;
   }
 }

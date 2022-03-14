@@ -14,7 +14,7 @@ export function links() {
 
 export function BlogPostsSection({ blogPosts }) {
   return (
-    <section className="posts_section">
+    <section className="blog-section">
       <h2 className="visually-hidden">Latest Blog Posts</h2>
       <ul>
         {blogPosts &&
