@@ -25,7 +25,7 @@ export function layout(grids) {
 }
 
 export function calculateMasonryLayout() {
-  let grids = [...document.querySelectorAll('.grid-masonry')];
+  let grids = [...document.querySelectorAll('.masonry')];
 
   if (
     grids.length &&

@@ -1,19 +1,14 @@
 main .about-container {
   border: 1.5px dotted var(--dusty-rose);
   width: 90%;
-  /* max-width: 500px; */
   margin: 60px auto;
   padding: 40px;
   border-radius: 10px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 main .about-container .author-image {
   border-radius: 5px;
   aspect-ratio: 3 / 2;
-  /* object-fit: cover; */
-  /* object-position: 10%; */
   background: url('/images/about_mobile.jpg') center no-repeat;
   background-size: cover;
 }
@@ -34,20 +29,8 @@ main .about-container h2 {
   margin-block: 30px 20px;
 }
 
-main .about-container ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
 main .about-container ul li {
   margin-bottom: 15px;
-}
-
-main .about-container .author-introduction ul li {
-  display: inline-flex;
-  align-items: center;
 }
 
 main .about-container .author-introduction ul li:not(:last-child) {
@@ -68,8 +51,12 @@ main .about-container .author-signature {
   text-transform: uppercase;
 }
 
-main .about-container .arabic-signature {
-  max-width: 150px;
+main .about-container > p {
+  margin-block: 10px;
+}
+
+main .about-container > p:first-of-type {
+  margin-block-start: 40px;
 }
 
 @media (min-width: 768px) {
@@ -86,11 +73,6 @@ main .about-container .arabic-signature {
 
   main .about-container .author-introduction h2 {
     margin-top: 0;
-  }
-
-  main .about-container .author-introduction ul {
-    flex-wrap: wrap;
-    flex-direction: row;
   }
 
   main .about-container .author-facts .title-container {
@@ -127,10 +109,6 @@ main .about-container .arabic-signature {
   main .about-container .wavy-line-long {
     display: initial;
   }
-
-  /* main .about-container .author-introduction .decoration-container {
-    width: auto;
-  } */
 }
 
 @media (min-width: 900px) {

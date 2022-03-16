@@ -1,9 +1,9 @@
-import { BookReviewItem, bookReviewItemLinks } from '../BookReviewItem';
+import { BookClubList, BookClubListLinks } from './BookClubList';
 
 import styles from './BookClubSection.css';
 
 export function links() {
-  return [...bookReviewItemLinks(), { rel: 'stylesheet', href: styles }];
+  return [...BookClubListLinks(), { rel: 'stylesheet', href: styles }];
 }
 
 export function BookClubSection({ books }) {
@@ -14,11 +14,7 @@ export function BookClubSection({ books }) {
         {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())}
         's Picks
       </h3>
-      <ul className="book-club-list">
-        {books.map((book) => (
-          <BookReviewItem key={book.id} book={book} />
-        ))}
-      </ul>
+      <BookClubList books={books} />
     </section>
   );
 }

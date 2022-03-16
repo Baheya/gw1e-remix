@@ -62,6 +62,7 @@
   --weak-pink: #fff0ea;
   --strong-pink: #ffdcd0;
   --dusty-rose: #b79289;
+  --dusty-rose-light: #e2c0b3;
   --weak-white: #fffcf7;
   --eggshell: #fffdf9;
 }
@@ -75,7 +76,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   isolation: isolate;
-  background-color: var(--weak-pink);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -83,6 +83,14 @@ body {
     'header'
     'main'
     'footer';
+}
+
+body.primary-bg {
+  background-color: var(--weak-pink);
+}
+
+body.secondary-bg {
+  background-color: var(--weak-white);
 }
 
 header {

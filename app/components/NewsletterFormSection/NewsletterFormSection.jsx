@@ -1,14 +1,20 @@
 import { Form, useActionData } from 'remix';
 import { Button, buttonLinks } from '../Button';
+import { Input, inputLinks } from './Input';
 
 import styles from './NewsletterFormSection.css';
 
 export function links() {
-  return [...buttonLinks(), { rel: 'stylesheet', href: styles }];
+  return [
+    ...buttonLinks(),
+    ...inputLinks(),
+    { rel: 'stylesheet', href: styles },
+  ];
 }
 
 export function NewsletterFormSection() {
   const actionData = useActionData();
+
   return (
     <section className="newsletter-form-section">
       <h2>
@@ -18,14 +24,8 @@ export function NewsletterFormSection() {
         Subscribe to the email list to get new posts directly to your inbox.
       </p>
       <Form method="post" action="/posts" reloadDocument>
-        <div className="newsletter-form-input-field">
-          <label htmlFor="name">First Name</label>
-          <input name="name" type="text" />
-        </div>
-        <div className="newsletter-form-input-field">
-          <label htmlFor="email">Email</label>
-          <input name="email" type="text" />
-        </div>
+        <Input label="First Name" name="name" />
+        <Input label="Email" name="email" />
         <Button variant="primary" type="submit">
           Submit
         </Button>

@@ -4,19 +4,6 @@ main.blog-container {
   margin: 40px auto;
 }
 
-main.blog-container .blog-grid-masonry {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: masonry;
-  gap: 2em;
-}
-
-.blog-grid-masonry > * {
-  align-self: start;
-}
-
 main.blog-container ul li img {
   aspect-ratio: initial;
 }

@@ -1,0 +1,11 @@
+.book-club-list {
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 700px) {
+  .book-club-list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

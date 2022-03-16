@@ -1,5 +1,7 @@
 header.header {
   padding: 30px 20px;
+  isolation: isolate;
+  z-index: 2;
 }
 
 .pink {

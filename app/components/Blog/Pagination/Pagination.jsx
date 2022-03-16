@@ -1,4 +1,4 @@
-import { PaginationItem, paginationItemLinks } from '../PaginationItem';
+import { PaginationItem, paginationItemLinks } from './PaginationItem';
 
 import styles from './Pagination.css';
 

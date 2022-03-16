@@ -2,18 +2,13 @@ import { useLoaderData, useParams } from 'remix';
 import { useEffect } from 'react';
 import { gql } from 'graphql-request';
 
-import { BlogLayout, blogLayoutLinks } from '~/components/BlogLayout';
+import { Blog, blogLinks } from '~/components/Blog';
 
 import { graphcms } from '~/utils/graphql';
 import { calculateMasonryLayout, layout } from '~/utils/calculateMasonryLayout';
 
 export function links() {
-  return [...blogLayoutLinks()];
-}
-
-export async function action({ request }) {
-  const formData = await request.formData();
-  return redirect(`/posts`);
+  return [...blogLinks()];
 }
 
 // TO DO: think about whether category icon should be dynamic
@@ -39,12 +34,10 @@ const GetPostsQuery = gql`
           title
           category {
             name
-            # icon {
-            #   url
-            # }
           }
           excerpt
           updatedAt
+          slug
           featuredImage {
             image {
               url
@@ -66,7 +59,7 @@ export let loader = async ({ params }) => {
   return { postsConnection };
 };
 
-export default function BlogPage() {
+export default function Posts() {
   let { postsConnection } = useLoaderData();
   const { page } = useParams();
 
@@ -78,10 +71,6 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <BlogLayout
-      currentPage={page}
-      postsLimit={postsLimit}
-      posts={postsConnection}
-    />
+    <Blog currentPage={page} postsLimit={postsLimit} posts={postsConnection} />
   );
 }

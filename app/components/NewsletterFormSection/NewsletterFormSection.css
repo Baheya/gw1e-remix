@@ -41,40 +41,9 @@
   font-family: 'Agrandir';
 }
 
-.newsletter-form-section label {
-  font-family: 'Agrandir';
-  font-style: italic;
-  text-transform: uppercase;
-  margin-right: auto;
-}
-
-.newsletter-form-section input {
-  background-color: var(--eggshell);
-  border: 1px solid #000;
-  height: 44px;
-  width: 100%;
-  padding: 6px 18px;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  border-radius: 5px;
-}
-
-.newsletter-form-section .newsletter-form-input-field {
-  text-align: start;
-  margin-top: 15px;
-  margin-inline-end: 10px;
-}
-
-.newsletter-form-section .newsletter-form-input-field:first-child,
 .newsletter-form-section button {
   flex-grow: 1;
   flex-basis: 25%;
-}
-
-.newsletter-form-section .newsletter-form-input-field:last-of-type {
-  text-align: start;
-  flex-grow: 2;
-  flex-basis: 40%;
 }
 
 @media (min-width: 750px) {

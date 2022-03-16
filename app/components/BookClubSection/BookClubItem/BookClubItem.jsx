@@ -1,13 +1,14 @@
 import { Link } from 'remix';
-import styles from './BookReviewItem.css';
+
+import styles from './BookClubItem.css';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function BookReviewItem({ book }) {
+export function BookClubItem({ book }) {
   return (
-    <li className="book-review-item" key={book.id}>
+    <li className="book-club-item" key={book.id}>
       <Link to="/">
         <img
           src={book.featuredImage.image.url}

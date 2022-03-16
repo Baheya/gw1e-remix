@@ -1,18 +1,66 @@
+import {
+  ArabicSignature,
+  arabicSignatureLinks,
+} from '~/components/ArabicSignature';
+import { List, listLinks } from '~/components/List';
+import { WavyLineMobile } from '../components/Icons/WavyLineMobile';
+import { WavyLineLong } from '../components/Icons/WavyLineLong';
+import { WavyLineShort } from '../components/Icons/WavyLineShort';
 import { Living } from '~/components/Icons/Living';
 import { Unicorn } from '~/components/Icons/Unicorn';
 import { Mobile } from '~/components/Icons/Mobile';
 import { Utensils } from '~/components/Icons/Utensils';
-import { WavyLineMobile } from '../components/Icons/WavyLineMobile';
-import { WavyLineLong } from '../components/Icons/WavyLineLong';
-import { WavyLineShort } from '../components/Icons/WavyLineShort';
 import { World } from '~/components/Icons/World';
-import arabicLogo from '../../public/images/arabic_logo.png';
 
 import styles from '~/styles/about.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [
+    ...arabicSignatureLinks(),
+    ...listLinks(),
+    { rel: 'stylesheet', href: styles },
+  ];
 }
+
+const interests = [
+  {
+    content: 'Sun Chaser',
+    icon: <Living />,
+  },
+  {
+    content: 'Fantasy Lover',
+    icon: <Unicorn />,
+  },
+  {
+    content: '90s groover',
+    icon: <Mobile />,
+  },
+  {
+    content: 'Gourmet Taster',
+    icon: <Utensils />,
+  },
+  {
+    content: 'Always on the mover',
+    icon: <World />,
+  },
+];
+
+const facts = [
+  {
+    content:
+      ' I spent much of the early 2000s reading Harry Potter fanfiction online.',
+  },
+  {
+    content:
+      'Spotify has described me as one of the only people that go from Trap queen to New Americana (and that’s how I roll).',
+  },
+  {
+    content: 'If I could be any animal, I’d be a dolphin.',
+  },
+  {
+    content: 'I am an Aquarius.',
+  },
+];
 
 export default function About() {
   return (
@@ -31,28 +79,7 @@ export default function About() {
           </p>
           <div className="author-interests">
             <h2>Read me if you are a </h2>
-            <ul>
-              <li>
-                <Living />
-                Sun chaser
-              </li>
-              <li>
-                <Unicorn />
-                Fantasy Lover
-              </li>
-              <li>
-                <Mobile />
-                90s groover
-              </li>
-              <li>
-                <Utensils />
-                Gourmet taster
-              </li>
-              <li>
-                <World />
-                Always on the mover
-              </li>
-            </ul>
+            <List type="flex" items={interests} />
           </div>
         </section>
         <WavyLineMobile className="wavy-line-mobile" />
@@ -63,18 +90,7 @@ export default function About() {
               <WavyLineShort />
             </span>
           </span>
-          <ul>
-            <li>
-              I spent much of the early 2000s reading Harry Potter fanfiction
-              online.
-            </li>
-            <li>
-              Spotify has described me as one of the only people that go from
-              Trap queen to New Americana (and that’s how I roll).
-            </li>
-            <li>If I could be any animal, I’d be a dolphin.</li>
-            <li>I am an Aquarius.</li>
-          </ul>
+          <List items={facts} />
         </section>
         <WavyLineLong className="wavy-line-long" />
         <WavyLineMobile className="wavy-line-mobile" />
@@ -88,7 +104,7 @@ export default function About() {
           </p>
         </section>
         <p>Your humble servant,</p>
-        <img className="arabic-signature" src={arabicLogo} alt="" />
+        <ArabicSignature />
         <p className="author-signature">Girl With One Earring</p>
       </div>
     </main>

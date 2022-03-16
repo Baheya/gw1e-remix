@@ -1,5 +1,5 @@
 import { useLoaderData } from 'remix';
-import { GraphQLClient, gql } from 'graphql-request';
+import { gql } from 'graphql-request';
 
 import {
   BookClubSection,
@@ -9,10 +9,7 @@ import {
   NewsletterFormSection,
   newsletterFormSectionLinks,
 } from '~/components/NewsletterFormSection';
-import {
-  BlogPostsSection,
-  blogPostsSectionLinks,
-} from '~/components/BlogPostsSection';
+import { PostsSection, postsSectionLinks } from '~/components/PostsSection';
 
 import { graphcms } from '~/utils/graphql';
 import styles from '~/styles/home.css';
@@ -21,7 +18,7 @@ export function links() {
   return [
     ...bookClubSectionLinks(),
     ...newsletterFormSectionLinks(),
-    ...blogPostsSectionLinks(),
+    ...postsSectionLinks(),
     { rel: 'stylesheet', href: styles },
   ];
 }
@@ -35,7 +32,7 @@ export async function action({ request }) {
 
 const GetBlogPostsQuery = gql`
   {
-    blogPosts(first: 4) {
+    posts(first: 4, where: { type: Blog }) {
       id
       title
       category {
@@ -46,6 +43,7 @@ const GetBlogPostsQuery = gql`
       }
       excerpt
       updatedAt
+      slug
       featuredImage {
         image {
           url
@@ -57,7 +55,7 @@ const GetBlogPostsQuery = gql`
 
 const GetBookReviewPostsQuery = gql`
   {
-    bookReviewPosts {
+    posts(where: { type: Review }) {
       id
       title
       excerpt
@@ -73,12 +71,10 @@ const GetBookReviewPostsQuery = gql`
 `;
 
 export let loader = async () => {
-  // const graphcms = new GraphQLClient(
-  //   'https://api-ap-south-1.graphcms.com/v2/ckypsi3rt0inu01xx6kuecie8/master'
-  // );
-
-  const { blogPosts } = await graphcms.request(GetBlogPostsQuery);
-  const { bookReviewPosts } = await graphcms.request(GetBookReviewPostsQuery);
+  const { posts: blogPosts } = await graphcms.request(GetBlogPostsQuery);
+  const { posts: bookReviewPosts } = await graphcms.request(
+    GetBookReviewPostsQuery
+  );
 
   return { blogPosts, bookReviewPosts };
 };
@@ -89,7 +85,7 @@ export default function Index() {
   return (
     <main>
       <h1 className="visually-hidden">Girl with One Earring</h1>
-      <BlogPostsSection blogPosts={blogPosts} />
+      <PostsSection blogPosts={blogPosts} />
       <BookClubSection books={bookReviewPosts} />
       <NewsletterFormSection />
     </main>

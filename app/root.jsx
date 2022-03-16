@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useMatches,
 } from 'remix';
 import { Footer, footerLinks } from './components/Footer';
 import { Header, headerLinks } from './components/Header';
@@ -27,6 +28,8 @@ export function meta() {
 // TO DO: think about whether category icon should be dynamic
 
 export default function App() {
+  const matches = useMatches();
+
   return (
     <html lang="en">
       <head>
@@ -36,7 +39,13 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        className={`${
+          matches?.[1]?.id === 'routes/post/$slug'
+            ? 'secondary-bg'
+            : 'primary-bg'
+        }`}
+      >
         <Header />
         <Outlet />
         <Footer />
