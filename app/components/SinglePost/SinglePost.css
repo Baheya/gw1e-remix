@@ -1,0 +1,44 @@
+article.post {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  max-width: 900px;
+  width: calc(100% - 60px);
+  margin: 60px auto;
+}
+
+article.post h1 {
+  font-family: 'Agrandir';
+  text-align: center;
+  font-weight: normal;
+}
+
+article.post .social-media:last-child {
+  justify-content: flex-start;
+}
+
+article.post .arabic-signature {
+  margin: 0 auto;
+}
+
+article.post p.send-off {
+  text-transform: uppercase;
+  font-family: 'Agrandir';
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+article.post .decorative-icons-container {
+  margin: 20px 0;
+}
+
+article.post .post-footer {
+  margin: 0 0 40px;
+}
+
+@media (min-width: 700px) {
+  article.post .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}

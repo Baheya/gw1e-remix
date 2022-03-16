@@ -1,0 +1,15 @@
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags li {
+  margin: 10px 0 0;
+}
+
+.tags .tag {
+  margin-inline-end: 10px;
+  margin-top: 10px;
+}

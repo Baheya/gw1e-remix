@@ -1,0 +1,8 @@
+.tag {
+  background-color: var(--strong-pink);
+  color: var(--dusty-rose);
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.4em;
+  font-family: 'Agrandir';
+}
