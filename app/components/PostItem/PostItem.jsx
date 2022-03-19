@@ -1,7 +1,9 @@
 import { Link } from 'remix';
+
 import { Button, buttonLinks } from '../Button';
 import { WavyLineMobile } from '../Icons/WavyLineMobile';
 import { PostMeta, postMetaLinks } from '../PostMeta';
+import { FeaturedImage, featuredImageLinks } from './FeaturedImage';
 
 import styles from './PostItem.css';
 
@@ -9,19 +11,24 @@ export function links() {
   return [
     ...postMetaLinks(),
     ...buttonLinks(),
+    ...featuredImageLinks(),
     { rel: 'stylesheet', href: styles },
   ];
 }
 
 // TO DO: optimize images
 
-export function PostItem({ post, featured }) {
+export function PostItem({ post, featured, layoutType }) {
   return (
     <li>
       <article
         className={featured ? 'blog-post-item featured' : 'blog-post-item'}
       >
-        <img src={post.featuredImage.image.url} alt={post?.imageAlt} />
+        <FeaturedImage
+          layoutType={layoutType}
+          post={post}
+          featured={featured}
+        />
         <div className="content-wrapper">
           {featured ? (
             <h3>{post.title}</h3>

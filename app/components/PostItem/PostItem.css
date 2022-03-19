@@ -37,14 +37,6 @@ article.blog-post-item .content-excerpt {
   margin-top: 20px;
 }
 
-article.blog-post-item img {
-  border-radius: 5px;
-  grid-column: 1 / 2;
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 3 / 2;
-}
-
 article.blog-post-item.featured .featured-button-wrapper {
   display: flex;
   align-items: center;
@@ -83,10 +75,6 @@ article.blog-post-item.featured .featured-button-wrapper svg {
     -webkit-box-orient: vertical;
   }
 
-  article.blog-post-item.featured img {
-    height: 100%;
-  }
-
   /* Variations */
   .posts-section > ul > li {
     margin-top: 20px;
@@ -101,7 +89,7 @@ article.blog-post-item.featured .featured-button-wrapper svg {
 /* Variations */
 
 .posts-section .blog-grid > li {
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .posts-section .blog-grid > li:first-of-type {

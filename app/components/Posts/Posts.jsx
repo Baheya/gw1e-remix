@@ -1,6 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
+
 import { Divider, dividerLinks } from '../Divider';
 import { PostItem, postItemLinks } from '../PostItem';
+
+import { filterGrids, onLayout } from '~/utils/calculateMasonryLayout';
 
 import styles from './Posts.css';
 
@@ -13,14 +16,37 @@ export function links() {
 }
 
 export function Posts({ layoutType, posts }) {
+  useEffect(() => {
+    let masonryGrids = [...document.querySelectorAll('.masonry')];
+    let handlers = [];
+
+    if (masonryGrids.length) {
+      const filteredMasonryGrids = filterGrids(masonryGrids);
+      onLayout(filteredMasonryGrids)();
+      addEventListener(
+        'resize',
+        (handlers[filteredMasonryGrids] = onLayout(filteredMasonryGrids)),
+        false
+      );
+    }
+
+    return () =>
+      removeEventListener(
+        'resize',
+        () => handlers[filteredMasonryGrids],
+        false
+      );
+  }, []);
+
   return (
     <ul
       className={layoutType === 'masonry' ? 'blog-grid masonry' : 'blog-grid'}
     >
       {posts ? (
         posts.map((post, index) => (
-          <Fragment key={post.id}>
+          <Fragment key={index}>
             <PostItem
+              layoutType={layoutType}
               post={post.node ?? post}
               featured={layoutType === 'spotlight' && index === 0}
               key={post.id}

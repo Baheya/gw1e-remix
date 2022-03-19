@@ -1,9 +1,0 @@
-.book-club-item img {
-  width: 100%;
-}
-
-@media (min-width: 700px) {
-  .book-club-item img {
-    max-width: 200px;
-  }
-}

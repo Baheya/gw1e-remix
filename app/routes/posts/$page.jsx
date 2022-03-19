@@ -1,11 +1,9 @@
 import { useLoaderData, useParams } from 'remix';
-import { useEffect } from 'react';
 import { gql } from 'graphql-request';
 
 import { Blog, blogLinks } from '~/components/Blog';
 
 import { graphcms } from '~/utils/graphql';
-import { calculateMasonryLayout, layout } from '~/utils/calculateMasonryLayout';
 
 export function links() {
   return [...blogLinks()];
@@ -40,7 +38,20 @@ const GetPostsQuery = gql`
           slug
           featuredImage {
             image {
-              url
+              thumbnail: url(
+                transformation: {
+                  image: { resize: { height: 200, width: 300 } }
+                  document: { output: { format: webp } }
+                }
+              )
+              url(
+                transformation: {
+                  image: { resize: { height: 400, width: 600 } }
+                  document: { output: { format: webp } }
+                }
+              )
+              width
+              height
             }
           }
         }
@@ -62,13 +73,6 @@ export let loader = async ({ params }) => {
 export default function Posts() {
   let { postsConnection } = useLoaderData();
   const { page } = useParams();
-
-  useEffect(() => {
-    calculateMasonryLayout();
-    addEventListener('resize', layout, false);
-
-    return () => removeEventListener('resize', layout, false);
-  }, []);
 
   return (
     <Blog currentPage={page} postsLimit={postsLimit} posts={postsConnection} />

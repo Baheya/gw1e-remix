@@ -37,16 +37,24 @@ const GetBlogPostsQuery = gql`
       title
       category {
         name
-        icon {
-          url
-        }
       }
       excerpt
       updatedAt
       slug
       featuredImage {
         image {
-          url
+          thumbnail: url(
+            transformation: {
+              image: { resize: { height: 200, width: 300 } }
+              document: { output: { format: webp } }
+            }
+          )
+          url(
+            transformation: {
+              image: { resize: { height: 400, width: 600 } }
+              document: { output: { format: webp } }
+            }
+          )
         }
       }
     }

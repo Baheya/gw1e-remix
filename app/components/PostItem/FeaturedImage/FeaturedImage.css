@@ -1,0 +1,13 @@
+article.blog-post-item img {
+  border-radius: 5px;
+  grid-column: 1 / 2;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+@media (min-width: 800px) {
+  article.blog-post-item.featured img {
+    height: 100%;
+  }
+}

@@ -1,11 +1,8 @@
 .book-club-list {
   list-style: none;
   padding: 0;
-}
-
-@media (min-width: 700px) {
-  .book-club-list {
-    display: flex;
-    justify-content: space-evenly;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 2em;
 }
