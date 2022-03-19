@@ -28,7 +28,7 @@ const categories = [
 
 const pages = [
   { name: 'Home', path: '/', hasChildren: false },
-  { name: 'Blog', path: '/posts', hasChildren: true },
+  { name: 'Blog', path: '/category/all', hasChildren: true },
   { name: 'About', path: '/about', hasChildren: false },
   { name: 'Contact', path: '/contact', hasChildren: false },
 ];
@@ -81,13 +81,13 @@ export function Header() {
                   >
                     {categories.map((category, index) => (
                       <li key={index}>
-                        <CategoryLink prefetch="intent" to="/category/living">
+                        <CategoryLink prefetch="intent" to={category.path}>
                           {category.name}
                         </CategoryLink>
                       </li>
                     ))}
                     <li>
-                      <NavLink prefetch="intent" to="/posts">
+                      <NavLink prefetch="intent" to="/category/all">
                         All Stories
                       </NavLink>
                     </li>

@@ -23,7 +23,7 @@ export function NewsletterFormSection() {
       <p>
         Subscribe to the email list to get new posts directly to your inbox.
       </p>
-      <Form method="post" action="/posts" reloadDocument>
+      <Form method="post" action="/category/all" reloadDocument>
         <Input label="First Name" name="name" />
         <Input label="Email" name="email" />
         <Button variant="primary" type="submit">

@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from 'remix';
-import { useEffect } from 'react';
 import { gql } from 'graphql-request';
 
 import { graphcms } from '~/utils/graphql';
@@ -11,7 +10,7 @@ export function links() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  return redirect(`/posts`);
+  return redirect(`/category/all`);
 }
 
 // TO DO: think about whether category icon should be dynamic
@@ -57,7 +56,6 @@ export let loader = async ({ params }) => {
 
 export default function BlogPage() {
   let { post } = useLoaderData();
-  const { page } = useParams();
 
   return <SinglePost post={post} />;
 }

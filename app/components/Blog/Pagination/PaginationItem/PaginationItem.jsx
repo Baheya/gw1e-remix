@@ -6,11 +6,15 @@ export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export function PaginationItem({ index, currentPage }) {
+export function PaginationItem({ index, currentPage, category }) {
   return (
     <li>
       <NavLink
-        to={index === 0 ? '/posts' : `/posts/${index + 1}`}
+        to={
+          index === 0
+            ? `/category/${category}`
+            : `/category/${category}/${index + 1}`
+        }
         className={({ isActive }) =>
           isActive ? 'pagination-item active' : 'pagination-item'
         }

@@ -42,7 +42,7 @@ export function Posts({ layoutType, posts }) {
     <ul
       className={layoutType === 'masonry' ? 'blog-grid masonry' : 'blog-grid'}
     >
-      {posts ? (
+      {posts.length ? (
         posts.map((post, index) => (
           <Fragment key={index}>
             <PostItem

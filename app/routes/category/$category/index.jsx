@@ -1,5 +1,4 @@
-import { useLoaderData } from 'remix';
-import { useEffect } from 'react';
+import { useLoaderData, useParams } from 'remix';
 import { gql } from 'graphql-request';
 
 import { Blog, blogLinks } from '~/components/Blog';
@@ -14,8 +13,12 @@ export function links() {
 const postsLimit = 6;
 
 const GetPostsQuery = gql`
-  query GetPostsQuery($postsLimit: Int!, $offset: Int!) {
-    postsConnection(first: $postsLimit, skip: $offset) {
+  query GetPostsQuery(
+    $postsLimit: Int!
+    $offset: Int!
+    $category: PostWhereInput
+  ) {
+    postsConnection(first: $postsLimit, skip: $offset, where: $category) {
       pageInfo {
         hasPreviousPage
         hasNextPage
@@ -60,10 +63,17 @@ const GetPostsQuery = gql`
   }
 `;
 
-export let loader = async () => {
+export let loader = async ({ params }) => {
+  const category =
+    params.category === 'all'
+      ? undefined
+      : params.category.charAt(0).toUpperCase() +
+        params.category.slice(1).toLowerCase();
+
   const { postsConnection } = await graphcms.request(GetPostsQuery, {
     postsLimit,
     offset: 0,
+    category: { category: { name: category } },
   });
 
   return { postsConnection };
@@ -71,8 +81,14 @@ export let loader = async () => {
 
 export default function Posts() {
   let { postsConnection } = useLoaderData();
+  const { category } = useParams();
 
   return (
-    <Blog currentPage={0} postsLimit={postsLimit} posts={postsConnection} />
+    <Blog
+      currentPage={0}
+      postsLimit={postsLimit}
+      posts={postsConnection}
+      category={category}
+    />
   );
 }

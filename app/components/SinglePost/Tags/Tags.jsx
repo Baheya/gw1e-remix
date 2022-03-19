@@ -1,8 +1,8 @@
-import { Tag } from './Tag';
+import { Tag, tagLinks } from './Tag';
 import styles from './Tags.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [...tagLinks(), { rel: 'stylesheet', href: styles }];
 }
 
 export function Tags({ tags }) {

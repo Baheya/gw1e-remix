@@ -1,4 +1,7 @@
+import { RichText } from '@graphcms/rich-text-react-renderer';
+
 import { Quote, quoteLinks } from '../Quote';
+
 import styles from './Body.css';
 
 export function links() {

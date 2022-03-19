@@ -14,8 +14,12 @@ export function links() {
 const postsLimit = 6;
 
 const GetPostsQuery = gql`
-  query GetPostsQuery($postsLimit: Int!, $offset: Int!) {
-    postsConnection(first: $postsLimit, skip: $offset) {
+  query GetPostsQuery(
+    $postsLimit: Int!
+    $offset: Int!
+    $category: PostWhereInput
+  ) {
+    postsConnection(first: $postsLimit, skip: $offset, where: $category) {
       pageInfo {
         hasPreviousPage
         hasNextPage
@@ -62,9 +66,15 @@ const GetPostsQuery = gql`
 
 export let loader = async ({ params }) => {
   const offset = (params.page - 1) * postsLimit;
+  const category =
+    params.category === 'all'
+      ? undefined
+      : params.category.charAt(0).toUpperCase() +
+        params.category.slice(1).toLowerCase();
   const { postsConnection } = await graphcms.request(GetPostsQuery, {
     postsLimit,
     offset: offset,
+    category: { category: { name: category } },
   });
 
   return { postsConnection };
@@ -72,9 +82,14 @@ export let loader = async ({ params }) => {
 
 export default function Posts() {
   let { postsConnection } = useLoaderData();
-  const { page } = useParams();
+  const { category, page } = useParams();
 
   return (
-    <Blog currentPage={page} postsLimit={postsLimit} posts={postsConnection} />
+    <Blog
+      currentPage={page}
+      postsLimit={postsLimit}
+      posts={postsConnection}
+      category={category}
+    />
   );
 }

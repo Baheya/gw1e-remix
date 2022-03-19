@@ -1,17 +1,15 @@
-import { RichText } from '@graphcms/rich-text-react-renderer';
-
 import { ArabicSignature, arabicSignatureLinks } from '../ArabicSignature';
+import { Body, bodyLinks } from './Body';
 import {
   DecorativeIcons,
   decorativeIconsLinks,
 } from '../Icons/DecorativeIcons';
-import { PostMeta, postMetaLinks } from '~/components/PostMeta';
-import { SharePost, sharePostLinks } from './SharePost';
-import { Tag, tagLinks } from './Tags/Tag';
-
-import styles from './SinglePost.css';
 import { FeaturedImage, featuredImageLinks } from './FeaturedImage';
 import { Tags, tagsLinks } from './Tags';
+import { PostMeta, postMetaLinks } from '~/components/PostMeta';
+import { SharePost, sharePostLinks } from './SharePost';
+
+import styles from './SinglePost.css';
 
 export function links() {
   return [
@@ -19,9 +17,9 @@ export function links() {
     ...sharePostLinks(),
     ...decorativeIconsLinks(),
     ...arabicSignatureLinks(),
-    ...tagLinks(),
     ...featuredImageLinks(),
     ...tagsLinks(),
+    ...bodyLinks(),
     { rel: 'stylesheet', href: styles },
   ];
 }
@@ -36,9 +34,7 @@ export function SinglePost({ post }) {
         image={post.featuredImage.image.url}
         caption={post.featuredImage.caption}
       />
-      <div className="body">
-        <RichText content={post.body.raw} />
-      </div>
+      <Body content={post.body.raw} />
       <div className="post-footer">
         <Tags tags={post.tag} />
 
