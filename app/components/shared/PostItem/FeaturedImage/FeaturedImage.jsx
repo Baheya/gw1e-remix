@@ -10,6 +10,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
       {layoutType === 'spotlight' ? (
         featured ? (
           <img
+            className="featured-image spotlight-grid"
             loading="eager"
             src={post.featuredImage.image.url}
             alt={post?.imageAlt}
@@ -18,6 +19,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
           />
         ) : (
           <img
+            className="featured-image spotlight-grid"
             loading="lazy"
             src={post.featuredImage.image.thumbnail}
             alt={post?.imageAlt}
@@ -28,7 +30,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
         )
       ) : (
         <img
-          className="featured-image"
+          className="featured-image masonry-grid"
           loading="eager"
           src={post.featuredImage.image.thumbnail}
           style={{

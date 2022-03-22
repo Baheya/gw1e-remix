@@ -62,7 +62,6 @@ article.blog-post-item.featured .featured-button-wrapper svg {
   fill: #000;
 }
 
-/* Component-specific media breakpoint */
 
 @media (min-width: 800px) {
   article.blog-post-item.featured {
@@ -88,7 +87,7 @@ article.blog-post-item.featured .featured-button-wrapper svg {
     -webkit-box-orient: vertical;
   }
 
-  /* Variations */
+
   .posts-section > ul > li {
     margin-top: 20px;
   }
@@ -99,7 +98,7 @@ article.blog-post-item.featured .featured-button-wrapper svg {
   }
 }
 
-/* Variations */
+
 
 .posts-section .blog-grid > li {
   margin: 30px auto;

@@ -46,7 +46,7 @@ const GetPostsQuery = gql`
             image {
               thumbnail: url(
                 transformation: {
-                  image: { resize: { height: 200, width: 300 } }
+                  image: { resize: { height: 300, width: 400 } }
                   document: { output: { format: webp } }
                 }
               )

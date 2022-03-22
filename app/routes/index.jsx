@@ -66,7 +66,7 @@ const GetBlogPostsQuery = gql`
 
 const GetBookReviewPostsQuery = gql`
   {
-    posts(where: { type: Review }) {
+    posts(first: 5, where: { type: Review }) {
       id
       title
       excerpt
