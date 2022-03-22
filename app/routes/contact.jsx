@@ -1,12 +1,17 @@
+import { Link } from 'remix';
 import {
   DecorativeIcons,
   decorativeIconsLinks,
-} from '~/components/Icons/DecorativeIcons';
+} from '~/components/shared/Icons/DecorativeIcons';
 
 import styles from '~/styles/contact.css';
 
 export function links() {
   return [...decorativeIconsLinks(), { rel: 'stylesheet', href: styles }];
+}
+
+export function meta() {
+  return { title: 'Girl with One Earring | Contact' };
 }
 
 export default function Contact() {
@@ -16,8 +21,14 @@ export default function Contact() {
       <div className="contact-container">
         <p>
           I’d prefer a handwritten letter but since this is the digital age you
-          can find me on Instagram @girlwithoneearringblog or via e-mail
-          girlwithoneearring@gmail.com
+          can find me on Instagram{' '}
+          <a href="https://instagram.com/girlwithoneearringblog">
+            @girlwithoneearringblog
+          </a>{' '}
+          or via e-mail{' '}
+          <a href="mailto:girlwithoneearring.com">
+            girlwithoneearring@gmail.com
+          </a>
         </p>
 
         <p>Let's Connect</p>

@@ -1,0 +1,44 @@
+.newsletter-form-input-field {
+  text-align: start;
+  margin-top: 15px;
+  margin-inline-end: 10px;
+}
+
+.newsletter-form-input-field label {
+  font-family: 'Agrandir';
+  font-style: italic;
+  text-transform: uppercase;
+  margin-right: auto;
+}
+
+.newsletter-form-input-field input {
+  background-color: var(--eggshell, #fffdf9);
+  border: 1px solid #000;
+  height: 44px;
+  width: 100%;
+  padding: 6px 18px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.newsletter-form-input-field input:focus-visible {
+    border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+}
+
+.newsletter-form-section .newsletter-form-input-field:first-child {
+  flex-grow: 1;
+  flex-basis: 25%;
+}
+
+.newsletter-form-section .newsletter-form-input-field:last-of-type {
+  text-align: start;
+  flex-grow: 2;
+  flex-basis: 40%;
+}

@@ -1,0 +1,15 @@
+.book-club-item a {
+    border: 3px solid transparent;
+    display: block;
+}
+
+.book-club-item a:focus-visible {
+      border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+    background-color: transparent;
+}

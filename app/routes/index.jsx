@@ -4,28 +4,33 @@ import { gql } from 'graphql-request';
 import {
   BookClubSection,
   bookClubSectionLinks,
-} from '~/components/BookClubSection';
+} from '~/components/Home/BookClubSection';
 import {
   NewsletterFormSection,
   newsletterFormSectionLinks,
-} from '~/components/NewsletterFormSection';
-import { PostsSection, postsSectionLinks } from '~/components/PostsSection';
+} from '~/components/Home/NewsletterFormSection';
+import {
+  PostsSection,
+  postsSectionLinks,
+} from '~/components/Home/PostsSection';
 
 import { graphcms } from '~/utils/graphql';
-import styles from '~/styles/home.css';
 
 export function links() {
   return [
     ...bookClubSectionLinks(),
     ...newsletterFormSectionLinks(),
     ...postsSectionLinks(),
-    { rel: 'stylesheet', href: styles },
   ];
 }
 
 export async function action({ request }) {
   const formData = await request.formData();
   return redirect(`/category/all`);
+}
+
+export function meta() {
+  return { title: 'Girl with One Earring | Home' };
 }
 
 // TO DO: think about whether category icon should be dynamic
@@ -68,6 +73,7 @@ const GetBookReviewPostsQuery = gql`
       title
       excerpt
       updatedAt
+      slug
       featuredImage {
         image {
           url

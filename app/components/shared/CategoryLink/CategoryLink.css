@@ -1,0 +1,43 @@
+a.category-link {
+  text-decoration: none;
+  font-family: 'Paquito';
+  text-transform: uppercase;
+  color: var(--dusty-rose, #b79289);
+}
+
+a.category-link span {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.category-link span:before {
+  content: '';
+  display: inline-block;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin-inline-end: 5px;
+}
+
+a.category-link span:after {
+  content: '';
+  margin-inline-end: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+a.living span:before {
+  background-image: url('/images/category_living.svg');
+}
+
+a.loving span:before {
+  background-image: url('/images/category_loving.svg');
+}
+
+a.doing span:before {
+  background-image: url('/images/category_doing.svg');
+}
+
+a.dying span:before {
+  background-image: url('/images/category_dying.svg');
+}

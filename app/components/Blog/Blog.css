@@ -1,23 +1,9 @@
-main.blog-container {
+.blog-container {
   max-width: 1000px;
   width: 90%;
   margin: 40px auto;
 }
 
-main.blog-container ul li img {
-  aspect-ratio: initial;
-}
-
-main.blog-container nav {
+.pagination {
   margin-top: 60px;
-}
-
-main.blog-container nav ul {
-  padding: 0;
-  display: flex;
-  list-style: none;
-}
-
-main.blog-container nav ul li {
-  margin-inline-end: 10px;
 }

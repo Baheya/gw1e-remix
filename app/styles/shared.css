@@ -86,11 +86,11 @@ body {
 }
 
 body.primary-bg {
-  background-color: var(--weak-pink);
+  background-color: var(--weak-pink, #fff0ea);
 }
 
 body.secondary-bg {
-  background-color: var(--weak-white);
+  background-color: var(--weak-white, #fffcf7);
 }
 
 header {

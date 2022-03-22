@@ -1,10 +1,10 @@
 .pagination-item {
-  border: 1px solid var(--dusty-rose);
+  border: 1px solid var(--dusty-rose, #b79289);
   width: 4ch;
   height: 35px;
   background-color: transparent;
   text-align: center;
-  color: var(--dusty-rose);
+  color: var(--dusty-rose, #b79289);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -16,9 +16,9 @@
 .pagination-item.active {
   border: 1px solid #000;
   color: #000;
-  background-color: var(--strong-pink);
+  background-color: var(--strong-pink, #ffdcd0);
 }
 
 .pagination-item:focus {
-  border: 3px dotted var(--dusty-rose);
+  border: 3px dotted var(--dusty-rose, #b79289);
 }

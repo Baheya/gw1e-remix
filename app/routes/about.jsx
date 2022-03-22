@@ -1,16 +1,16 @@
 import {
   ArabicSignature,
   arabicSignatureLinks,
-} from '~/components/ArabicSignature';
-import { List, listLinks } from '~/components/List';
-import { WavyLineMobile } from '../components/Icons/WavyLineMobile';
-import { WavyLineLong } from '../components/Icons/WavyLineLong';
-import { WavyLineShort } from '../components/Icons/WavyLineShort';
-import { Living } from '~/components/Icons/Living';
-import { Unicorn } from '~/components/Icons/Unicorn';
-import { Mobile } from '~/components/Icons/Mobile';
-import { Utensils } from '~/components/Icons/Utensils';
-import { World } from '~/components/Icons/World';
+} from '~/components/shared/ArabicSignature';
+import { List, listLinks } from '~/components/About/List';
+import { WavyLineMobile } from '../components/shared/Icons/WavyLineMobile';
+import { WavyLineLong } from '../components/shared/Icons/WavyLineLong';
+import { WavyLineShort } from '../components/shared/Icons/WavyLineShort';
+import { Living } from '~/components/shared/Icons/Living';
+import { Unicorn } from '~/components/shared/Icons/Unicorn';
+import { Mobile } from '~/components/shared/Icons/Mobile';
+import { Utensils } from '~/components/shared/Icons/Utensils';
+import { World } from '~/components/shared/Icons/World';
 
 import styles from '~/styles/about.css';
 
@@ -20,6 +20,10 @@ export function links() {
     ...listLinks(),
     { rel: 'stylesheet', href: styles },
   ];
+}
+
+export function meta() {
+  return { title: 'Girl with One Earring | About' };
 }
 
 const interests = [

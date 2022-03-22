@@ -1,0 +1,31 @@
+.post-meta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.post-meta .date {
+  font-family: 'Agrandir';
+  color: var(--dusty-rose, #b79289);
+  margin-inline-start: -15px;
+}
+
+.post-meta .date:before {
+  content: '•';
+  margin-inline-end: 5px;
+}
+
+.post-meta .category-link {
+  border: 3px solid transparent;
+}
+
+.post-meta .category-link:focus-visible {
+  border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+    background-color: transparent;
+}

@@ -1,5 +1,5 @@
 import { Pagination, paginationLinks } from './Pagination';
-import { Posts, postsLinks } from '../Posts';
+import { Posts, postsLinks } from '../shared/Posts';
 
 import styles from './Blog.css';
 

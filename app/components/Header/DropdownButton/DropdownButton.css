@@ -1,10 +1,20 @@
-.main-navigation-links > li > button.button span:after {
+.main-navigation-links > li > button.button[aria-expanded='false'] span:after {
   content: '';
   display: inline-block;
   background-size: 15px;
   width: 15px;
   height: 15px;
   background-image: url('/images/caret_down.svg');
+  margin-inline-start: 5px;
+}
+
+.main-navigation-links > li > button.button[aria-expanded='true'] span:after {
+  content: '';
+  display: inline-block;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  background-image: url('/images/caret_up.svg');
   margin-inline-start: 5px;
 }
 
@@ -27,6 +37,6 @@
 }
 
 .main-navigation-links > li > button.button:hover {
-  color: var(--dusty-rose);
+  color: var(--dusty-rose, #b79289);
   transition: 0.4s;
 }

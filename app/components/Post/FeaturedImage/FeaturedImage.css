@@ -1,0 +1,25 @@
+.featured-image figcaption {
+  color: var(--dusty-rose, #b79289);
+  text-transform: uppercase;
+  font-family: 'Agrandir';
+  font-size: 12px;
+}
+
+article.post figure img {
+  width: 100%;
+}
+
+article.post figure {
+  margin: 0 -30px;
+}
+
+article.post figure figcaption {
+  text-align: start;
+  margin: 20px 0 60px 30px;
+}
+
+@media (min-width: 960px) {
+  article.post figure img {
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+.tag {
+  background-color: var(--strong-pink, #ffdcd0);
+  color: var(--dusty-rose, #b79289);
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.4em;
+  font-family: 'Agrandir';
+  border: 3px solid transparent;
+}
+
+.tag:focus {
+  outline: none;
+}
+
+.tag:focus-visible {
+  border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+}

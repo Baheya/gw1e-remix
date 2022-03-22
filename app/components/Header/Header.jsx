@@ -1,11 +1,12 @@
-import { NavLink, useLocation } from 'remix';
+import { NavLink } from 'remix';
 import { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
-import { CategoryLink, categoryLinkLinks } from '../CategoryLink';
+import { CategoryLink, categoryLinkLinks } from '../shared/CategoryLink';
 import { DropdownButton, dropdownButtonLinks } from './DropdownButton';
 import { HamburgerButton, hamburgerButtonLinks } from './HamburgerButton';
 import { Logo, logoLinks } from './Logo';
+
+import { keyboardHandler } from '~/utils/keyboardHandler';
 
 import styles from './Header.css';
 
@@ -37,78 +38,84 @@ export function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isSubNavVisible, setIsSubNavVisible] = useState(false);
 
-  let location = useLocation();
-
-  const isBiggerThanTablet = useMediaQuery({
-    query: '(min-width: 768px)',
-  });
-
   useEffect(() => {
-    if (!isBiggerThanTablet) {
-      setIsNavVisible(false);
-      setIsSubNavVisible(false);
-    }
-  }, [location, isBiggerThanTablet]);
+    addEventListener('keydown', keyboardHandler);
+
+    return () => removeEventListener('keydown', keyboardHandler);
+  }, []);
 
   return (
-    <header
-      className={isNavVisible && !isBiggerThanTablet ? 'header pink' : 'header'}
-    >
+    <header className={isNavVisible ? 'header pink' : 'header'}>
       <nav className="header-navigation" aria-label="Main Navigation">
         <Logo />
         <HamburgerButton
           setIsNavVisible={setIsNavVisible}
           isNavVisible={isNavVisible}
         />
-        {isBiggerThanTablet || isNavVisible ? (
-          <ul className="main-navigation-links">
-            {pages.map((page, index) =>
-              page.hasChildren ? (
-                <li className="dropdown" key={index}>
-                  <DropdownButton
-                    isSubNavVisible={isSubNavVisible}
-                    setIsSubNavVisible={setIsSubNavVisible}
-                  >
-                    {page.name}
-                  </DropdownButton>
-                  <ul
-                    className={
-                      isSubNavVisible
-                        ? 'sub-navigation-links visible'
-                        : 'sub-navigation-links'
-                    }
-                    id="blog-dropdown"
-                  >
-                    {categories.map((category, index) => (
-                      <li key={index}>
-                        <CategoryLink prefetch="intent" to={category.path}>
-                          {category.name}
-                        </CategoryLink>
-                      </li>
-                    ))}
-                    <li>
-                      <NavLink prefetch="intent" to="/category/all">
-                        All Stories
-                      </NavLink>
+
+        <ul
+          className={
+            isNavVisible
+              ? 'main-navigation-links visible'
+              : 'main-navigation-links'
+          }
+        >
+          {pages.map((page, index) =>
+            page.hasChildren ? (
+              <li className="dropdown" key={index}>
+                <DropdownButton
+                  isSubNavVisible={isSubNavVisible}
+                  setIsSubNavVisible={setIsSubNavVisible}
+                >
+                  {page.name}
+                </DropdownButton>
+                <ul
+                  className={
+                    isSubNavVisible
+                      ? 'sub-navigation-links visible'
+                      : 'sub-navigation-links'
+                  }
+                  id="blog-dropdown"
+                >
+                  {categories.map((category, index) => (
+                    <li key={index}>
+                      <CategoryLink
+                        className="sub-navigation-link"
+                        prefetch="intent"
+                        to={category.path}
+                      >
+                        {category.name}
+                      </CategoryLink>
                     </li>
-                  </ul>
-                </li>
-              ) : (
-                <li key={index}>
-                  <NavLink
-                    prefetch="intent"
-                    to={page.path}
-                    className={({ isActive }) =>
-                      isActive ? 'link-active' : ''
-                    }
-                  >
-                    {page.name}
-                  </NavLink>
-                </li>
-              )
-            )}
-          </ul>
-        ) : null}
+                  ))}
+                  <li>
+                    <NavLink
+                      className="sub-navigation-link"
+                      // prefetch="intent"
+                      to="/category/all"
+                    >
+                      All Stories
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li key={index}>
+                <NavLink
+                  // prefetch="intent"
+                  to={page.path}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'link-active main-navigation-link'
+                      : 'main-navigation-link'
+                  }
+                >
+                  {page.name}
+                </NavLink>
+              </li>
+            )
+          )}
+        </ul>
       </nav>
     </header>
   );

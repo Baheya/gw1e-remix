@@ -1,5 +1,11 @@
 main .contact-container {
-  border: 1.5px dotted var(--dusty-rose);
+    border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
   width: 90%;
   max-width: 500px;
   margin: 60px auto;
@@ -13,6 +19,10 @@ main .contact-container p {
   font-family: 'PP Woodland';
   text-align: center;
   margin-bottom: 20px;
+}
+
+main .contact-container a {
+  color: var(--dusty-rose, #b79289);
 }
 
 main .contact-container p:last-of-type {

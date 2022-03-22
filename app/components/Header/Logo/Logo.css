@@ -1,6 +1,16 @@
 .logo-wrapper:focus,
 .logo-wrapper:focus-within {
-  outline: 1px solid var(--dusty-rose);
+  border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+}
+
+.logo-wrapper {
+  border: 3px solid transparent;
 }
 
 .logo {

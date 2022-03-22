@@ -1,7 +1,6 @@
-import { Button, buttonLinks } from '../../Button';
-
-import closeIcon from '../../../../public/images/close.svg';
-import hamburgerIcon from '../../../../public/images/hamburger-icon.svg';
+import { Button, buttonLinks } from '../../shared/Button';
+import { Close } from '~/components/shared/Icons/Close';
+import { Hamburger } from '~/components/shared/Icons/Hamburger';
 
 import styles from './HamburgerButton.css';
 
@@ -15,17 +14,9 @@ export function HamburgerButton({ isNavVisible, setIsNavVisible }) {
       onClick={() => setIsNavVisible(!isNavVisible)}
       label="Toggle Navigation Menu"
       variant="icon"
-      icon={
-        !isNavVisible ? (
-          <img
-            className="icon"
-            src={hamburgerIcon}
-            alt="Toggle Navigation Menu"
-          />
-        ) : (
-          <img className="icon" src={closeIcon} alt="Toggle Navigation Menu" />
-        )
-      }
+      className="hamburger-button"
+      aria-expanded={isNavVisible}
+      icon={!isNavVisible ? <Hamburger /> : <Close />}
     />
   );
 }

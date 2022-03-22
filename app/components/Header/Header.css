@@ -2,10 +2,11 @@ header.header {
   padding: 30px 20px;
   isolation: isolate;
   z-index: 2;
+  height: 130px;
 }
 
 .pink {
-  background-color: var(--strong-pink);
+  background-color: var(--strong-pink, #ffdcd0);
 }
 
 header.header .header-navigation {
@@ -25,18 +26,18 @@ header.header .header-navigation {
   grid-row: 2;
   grid-column: 1 / -1;
   width: auto;
-  margin: 10px -20px 0 -20px;
+  margin: 5px -20px 0 -20px;
   position: absolute;
   width: 100%;
-  /* TO DO: make sure the below value situates the element correctly across mobile devices */
-  top: 15%;
-  background-color: var(--strong-pink);
+  top: 120px;
+  background-color: var(--strong-pink, #ffdcd0);
+  display: none;
 }
 
-.main-navigation-links > li.dropdown:focus .sub-navigation-links,
-ul.visible {
+.main-navigation-links.visible , .sub-navigation-links.visible {
   display: block;
 }
+
 
 .main-navigation-links > li > a {
   font-family: 'Agrandir';
@@ -48,11 +49,13 @@ ul.visible {
   align-items: center;
   width: 100%;
   justify-content: center;
+ outline: none;
+
 }
 
 .main-navigation-links > li:not(:first-child),
 .main-navigation-links > li:not(:last-child) {
-  border-top: 1px solid var(--dusty-rose);
+  border-top: 1px solid var(--dusty-rose, #b79289);
 }
 
 .main-navigation-links > li {
@@ -60,9 +63,13 @@ ul.visible {
   text-align: center;
 }
 
-.main-navigation-links > li > a:focus,
-.main-navigation-links > li > a:focus-within {
-  outline: 1px dotted var(--dusty-rose);
+.main-navigation-links > li:focus-within {
+    background-color: var(--weak-pink, #fff0ea);
+}
+
+  .main-navigation-links > li > button:focus {
+   outline: none;
+
 }
 
 .sub-navigation-links {
@@ -80,14 +87,29 @@ ul.visible {
   text-decoration: none;
   font-family: 'Paquito';
   text-transform: uppercase;
-  color: var(--dusty-rose);
+  color: var(--dusty-rose, #b79289);
+}
+
+  .sub-navigation-links > li > a:focus-visible {
+    border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+    background-color: transparent;
 }
 
 @media (min-width: 768px) {
+  header.header {
+    background-color: transparent;
+  }
+  
   .header-navigation .icon-button {
     display: none;
   }
-  .main-navigation-links {
+  .main-navigation-links, .main-navigation-links.visible {
     grid-row: 1;
     grid-column: -1;
     display: flex;
@@ -102,39 +124,60 @@ ul.visible {
     padding: 0;
     flex-grow: 1;
   }
+
+  .main-navigation-links > li:focus-within {
+    background-color: transparent;
+}
+
   .main-navigation-links > li:not(:first-child),
-  .main-navigation-links > li:not(:last-child) {
+.main-navigation-links > li:not(:last-child) {
     border-top: none;
-  }
+}
+
+  ul.main-navigation-links > li > a {
+    border: 3px solid transparent;
+}
+
+  .main-navigation-links > li > a:focus-visible, .main-navigation-links > li.dropdown > button:focus-visible, .sub-navigation-links > li > a:focus-visible {
+    border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+    background-color: transparent;
+}
+
+
 
   .main-navigation-links li .link-active {
-    color: var(--dusty-rose);
+    color: var(--dusty-rose, #b79289);
     text-decoration: underline;
+    border: 3px solid transparent;
   }
 
   .main-navigation-links > li a:hover {
-    color: var(--dusty-rose);
+    color: var(--dusty-rose, #b79289);
     transition: 0.4s;
   }
   .sub-navigation-links {
     position: absolute;
-    top: 45px;
+    top: 40px;
     left: 0;
     right: 0;
-    background-color: var(--strong-pink);
+    background-color: var(--strong-pink, #ffdcd0);
   }
 
-  .sub-navigation-links > li,
   .sub-navigation-links > li {
     padding: 10px;
   }
 
   .sub-navigation-links > li:not(:first-child) {
-    border-top: 1px solid var(--dusty-rose);
+    border-top: 1px solid var(--dusty-rose, #b79289);
   }
 
-  .main-navigation-links > li.dropdown:hover .sub-navigation-links,
-  ul.visible {
+  .main-navigation-links > li.dropdown:hover .sub-navigation-links {
     display: block;
   }
 }

@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from 'remix';
 import { gql } from 'graphql-request';
 
 import { graphcms } from '~/utils/graphql';
-import { SinglePost, singlePostLinks } from '../../components/SinglePost';
+import { SinglePost, singlePostLinks } from '../../components/Post';
 
 export function links() {
   return [...singlePostLinks()];
@@ -28,7 +28,20 @@ const GetPostQuery = gql`
       featuredImage {
         caption
         image {
-          url
+          thumbnail: url(
+            transformation: {
+              image: { resize: { height: 200, width: 300 } }
+              document: { output: { format: webp } }
+            }
+          )
+          url(
+            transformation: {
+              image: { resize: { height: 400, width: 600 } }
+              document: { output: { format: webp } }
+            }
+          )
+          width
+          height
         }
       }
       tag {

@@ -1,4 +1,4 @@
-.nav .icon-button .icon {
-  width: 35px;
-  height: auto;
+.header-navigation .icon-button svg {
+  filter: invert(71%) sepia(13%) saturate(599%) hue-rotate(325deg)
+    brightness(84%) contrast(89%);
 }

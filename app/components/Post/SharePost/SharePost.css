@@ -1,0 +1,35 @@
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 20px 0;
+}
+
+.social-media button {
+  border: 3px solid transparent !important;
+}
+.social-media button:focus-visible {
+  border-style: dotted !important;
+  border-color: var(--dusty-rose, #b79289) !important;
+  border-width: 3px !important;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg') !important
+  border-image-slice: 33% 33% !important;
+  border-image-repeat: round !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.social-media > * {
+  margin-inline-end: 20px;
+}
+
+.social-media p {
+  font-family: 'Agrandir';
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.social-media-icon {
+  fill: var(--dusty-rose, #b79289);
+}

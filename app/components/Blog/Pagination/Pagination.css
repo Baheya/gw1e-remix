@@ -3,10 +3,6 @@
 }
 
 .pagination ul {
-  margin-top: 60px;
-}
-
-.pagination ul {
   padding: 0;
   display: flex;
   list-style: none;

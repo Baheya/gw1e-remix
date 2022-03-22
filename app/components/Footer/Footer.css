@@ -1,6 +1,6 @@
 footer.footer {
   border-top: 1px solid #000;
-  background-color: var(--strong-pink);
+  background-color: var(--strong-pink, #ffdcd0);
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -22,6 +22,12 @@ footer.footer .footer-navigation-links {
   width: 100%;
 }
 
+footer.footer .footer-navigation-links > li {
+  position: relative;
+  padding: 0;
+  flex-grow: 1;
+}
+
 footer.footer .footer-navigation-links > li > a {
   font-family: 'Agrandir';
   text-transform: uppercase;
@@ -32,23 +38,29 @@ footer.footer .footer-navigation-links > li > a {
   align-items: center;
   width: 100%;
   justify-content: center;
+  border: 3px solid transparent;
 }
 
-footer.footer .footer-navigation-links > li {
-  position: relative;
-  padding: 0;
-  flex-grow: 1;
+footer.footer .footer-navigation-links > li > a:focus-visible {
+    border-style: dotted;
+  border-color: var(--dusty-rose, #b79289);
+  border-width: 3px;
+  border-image-source: url('https://cl.ly/3c2J3c0l3r0P/dots.svg')
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  outline: none;
+    background-color: transparent;
 }
 
 footer.footer button.icon-button {
-  background-color: var(--weak-pink);
+  background-color: var(--weak-pink, #fff0ea);
   margin: auto;
 }
 
 footer.footer button.icon-button .icon {
   width: auto;
   height: auto;
-  color: var(--dusty-rose);
+  color: var(--dusty-rose, #b79289);
 }
 
 @media (min-width: 700px) {
@@ -58,10 +70,7 @@ footer.footer button.icon-button .icon {
 
   footer.footer nav {
     flex-grow: 0;
-  }
-
-  footer.footer .footer-navigation-links > li {
-    padding: 0 1.5em;
+    width: 40%;
   }
 
   footer.footer button.icon-button {

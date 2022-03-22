@@ -1,4 +1,4 @@
-import { Button, buttonLinks } from '~/components/Button';
+import { Button, buttonLinks } from '~/components/shared/Button';
 
 import styles from './DropdownButton.css';
 
@@ -13,6 +13,8 @@ export function DropdownButton({
 }) {
   return (
     <Button
+      label="Toggle Blog Categories Navigation"
+      className="button dropdown-button"
       aria-expanded={isSubNavVisible}
       aria-controls="blog-dropdown"
       onClick={() => setIsSubNavVisible(!isSubNavVisible)}
