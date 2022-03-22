@@ -23,6 +23,7 @@ export function links() {
 const categories = [
   { name: 'Living', path: '/category/living' },
   { name: 'Loving', path: '/category/loving' },
+  { name: 'Reading', path: '/category/reading' },
   { name: 'Doing', path: '/category/doing' },
   { name: 'Dying', path: '/category/dying' },
 ];

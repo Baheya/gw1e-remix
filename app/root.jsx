@@ -23,10 +23,6 @@ export function meta() {
   return { title: 'GW1E' };
 }
 
-//TO DO: re-organize headings semantic structure for homepage
-//TO DO: set CONSISTENT global media queries
-// TO DO: think about whether category icon should be dynamic
-
 export default function App() {
   const matches = useMatches();
 

@@ -33,8 +33,6 @@ export function meta() {
   return { title: 'Girl with One Earring | Home' };
 }
 
-// TO DO: think about whether category icon should be dynamic
-
 const GetBlogPostsQuery = gql`
   {
     posts(first: 4, where: { type: Blog }) {

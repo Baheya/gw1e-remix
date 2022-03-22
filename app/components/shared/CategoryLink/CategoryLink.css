@@ -41,3 +41,7 @@ a.doing span:before {
 a.dying span:before {
   background-image: url('/images/category_dying.svg');
 }
+
+a.reading span:before {
+  background-image: url('/images/read.svg');
+}

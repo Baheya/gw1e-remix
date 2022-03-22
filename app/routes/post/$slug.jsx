@@ -13,9 +13,6 @@ export async function action({ request }) {
   return redirect(`/category/all`);
 }
 
-// TO DO: think about whether category icon should be dynamic
-// add post limit to global config?
-
 const GetPostQuery = gql`
   query GetPostQuery($slug: String!) {
     post(where: { slug: $slug }) {

@@ -13,8 +13,6 @@ export function meta() {
   return { title: 'Girl with One Earring | Blog' };
 }
 
-// TO DO: think about whether category icon should be dynamic
-// add post limit to global config?
 const postsLimit = 6;
 
 const GetPostsQuery = gql`
