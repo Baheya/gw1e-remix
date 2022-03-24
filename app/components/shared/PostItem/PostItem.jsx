@@ -28,11 +28,19 @@ export function PostItem({ post, featured, layoutType }) {
           featured={featured}
         />
         <div className="content-wrapper">
-          {featured ? (
-            <h3>{post.title}</h3>
+          {layoutType === 'spotlight' ? (
+            featured ? (
+              <h3>{post.title}</h3>
+            ) : (
+              <Link className="content-link" to={`/post/${post.slug}`}>
+                <h3>{post.title}</h3>
+              </Link>
+            )
+          ) : featured ? (
+            <h2>{post.title}</h2>
           ) : (
             <Link className="content-link" to={`/post/${post.slug}`}>
-              <h3>{post.title}</h3>
+              <h2>{post.title}</h2>
             </Link>
           )}
           {!featured ? (

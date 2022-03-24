@@ -9,6 +9,7 @@ import { Logo, logoLinks } from './Logo';
 import { keyboardHandler } from '~/utils/keyboardHandler';
 
 import styles from './Header.css';
+import { useLocation } from '@remix-run/react';
 
 export function links() {
   return [
@@ -38,6 +39,11 @@ const pages = [
 export function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isSubNavVisible, setIsSubNavVisible] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setIsNavVisible(false);
+  }, [pathname]);
 
   useEffect(() => {
     addEventListener('keydown', keyboardHandler);

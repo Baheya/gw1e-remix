@@ -38,7 +38,7 @@ article.blog-post-item .content-link:after {
   right: 0;
 }
 
-article.blog-post-item h3 {
+article.blog-post-item h3, article.blog-post-item h2 {
   font-family: 'Paquito';
   font-weight: 400;
   font-style: normal;

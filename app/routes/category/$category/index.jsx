@@ -43,6 +43,7 @@ const GetPostsQuery = gql`
           updatedAt
           slug
           featuredImage {
+            alt
             image {
               thumbnail: url(
                 transformation: {

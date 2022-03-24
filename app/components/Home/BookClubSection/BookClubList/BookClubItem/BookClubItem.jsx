@@ -11,6 +11,7 @@ export function BookClubItem({ book }) {
     <li className="book-club-item" key={book.id}>
       <Link to={`/post/${book.slug}`}>
         <img
+          loading="lazy"
           src={book.featuredImage.image.thumbnail}
           alt={`Book cover for ${book.featuredImage.name}`}
         />
