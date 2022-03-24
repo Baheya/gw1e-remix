@@ -7,7 +7,7 @@ export function links() {
 export function Input({ label, name }) {
   return (
     <div className="newsletter-form-input-field">
-      <label htmlFor="name">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <input name={name} type="text" />
     </div>
   );

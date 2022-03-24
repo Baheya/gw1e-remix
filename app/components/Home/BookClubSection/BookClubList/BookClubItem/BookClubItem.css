@@ -13,3 +13,7 @@
   outline: none;
     background-color: transparent;
 }
+
+.book-club-item img {
+    aspect-ratio: 165.251;
+}

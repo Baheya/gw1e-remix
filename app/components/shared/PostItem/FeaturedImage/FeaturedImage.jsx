@@ -13,7 +13,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
             className="featured-image spotlight-grid"
             loading="eager"
             src={post.featuredImage.image.url}
-            alt={post?.imageAlt}
+            alt={post?.featuredImage.alt}
             srcSet={`${post.featuredImage.image.thumbnail} 300w, ${post.featuredImage.image.url} 600w`}
             sizes="(min-width: 500px) 600px, 100px"
           />
@@ -22,7 +22,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
             className="featured-image spotlight-grid"
             loading="lazy"
             src={post.featuredImage.image.thumbnail}
-            alt={post?.imageAlt}
+            alt={post?.featuredImage.alt}
             srcSet={`${post.featuredImage.image.thumbnail} 300w, ${post.featuredImage.image.url} 600w`}
             sizes="(min-width: 800px) 100px, 
             (min-width: 500px) 600px, 100px"
@@ -38,7 +38,7 @@ export function FeaturedImage({ layoutType, featured, post }) {
               post.featuredImage.image.width / post.featuredImage.image.height
             }`,
           }}
-          alt={post?.imageAlt}
+          alt={post?.featuredImage.alt}
           srcSet={`${post.featuredImage.image.thumbnail} 300w, ${post.featuredImage.image.url} 600w`}
           sizes="(min-width: 500px) 100px, 300px"
         />

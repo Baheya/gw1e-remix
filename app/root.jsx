@@ -20,7 +20,11 @@ export const links = () => [
 ];
 
 export function meta() {
-  return { title: 'GW1E' };
+  return {
+    title: 'GW1E',
+    description:
+      'A blog where all of the musings of a Girl with One Earring live.',
+  };
 }
 
 export default function App() {
