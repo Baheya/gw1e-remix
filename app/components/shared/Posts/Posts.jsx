@@ -51,7 +51,11 @@ export function Posts({ layoutType, posts }) {
               featured={layoutType === 'spotlight' && index === 0}
               key={post.id}
             />
-            {layoutType === 'spotlight' && index === 0 ? <Divider /> : null}
+            {layoutType === 'spotlight' && index === 0 ? (
+              <li role="separator">
+                <Divider />
+              </li>
+            ) : null}
           </Fragment>
         ))
       ) : (

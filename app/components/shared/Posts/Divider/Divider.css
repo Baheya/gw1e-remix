@@ -17,10 +17,8 @@
   background-size: 7px 100%;
 }
 
-/* Variations */
-
 @media (min-width: 800px) {
-  .posts-section .divider-wrapper {
+  .posts-section li[role='separator'] {
     grid-column: 1 / -1;
     width: 50%;
   }
