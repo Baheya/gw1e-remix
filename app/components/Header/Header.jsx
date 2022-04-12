@@ -98,7 +98,7 @@ export function Header() {
                   <li>
                     <NavLink
                       className="sub-navigation-link"
-                      // prefetch="intent"
+                      prefetch="intent"
                       to="/category/all"
                     >
                       All Stories

@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 
 import { Divider, dividerLinks } from './Divider';
 import { PostItem, postItemLinks } from '../PostItem';
@@ -16,18 +16,21 @@ export function links() {
 }
 
 export function Posts({ layoutType, posts }) {
+  const gridRef = useRef(null);
+
   useEffect(() => {
-    let masonryGrids = [...document.querySelectorAll('.masonry')];
     let handlers = [];
 
-    if (masonryGrids.length) {
-      const filteredMasonryGrids = filterGrids(masonryGrids);
-      onLayout(filteredMasonryGrids)();
-      addEventListener(
-        'resize',
-        (handlers[filteredMasonryGrids] = onLayout(filteredMasonryGrids)),
-        false
-      );
+    if (gridRef.current !== null) {
+      setTimeout(() => {
+        const filteredMasonryGrids = filterGrids([gridRef.current]);
+        onLayout(filteredMasonryGrids)();
+        addEventListener(
+          'resize',
+          (handlers[filteredMasonryGrids] = onLayout(filteredMasonryGrids)),
+          false
+        );
+      }, 300);
     }
 
     return () =>
@@ -36,10 +39,11 @@ export function Posts({ layoutType, posts }) {
         () => handlers[filteredMasonryGrids],
         false
       );
-  }, []);
+  }, [gridRef.current]);
 
   return (
     <ul
+      ref={layoutType === 'masonry' ? gridRef : null}
       className={layoutType === 'masonry' ? 'blog-grid masonry' : 'blog-grid'}
     >
       {posts.length ? (
