@@ -30,7 +30,7 @@ export function Posts({ layoutType, posts }) {
           (handlers[filteredMasonryGrids] = onLayout(filteredMasonryGrids)),
           false
         );
-      }, 300);
+      }, 600);
     }
 
     return () =>
